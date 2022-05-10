@@ -33,7 +33,7 @@ public class Login {
         connect(user,password);
         if(sign)
         {
-            root = FXMLLoader.load(SceneController.class.getResource("Home.fxml"));
+            root = FXMLLoader.load(Login.class.getResource("Home.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
