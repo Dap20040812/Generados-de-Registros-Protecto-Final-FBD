@@ -12,9 +12,12 @@ public class main {
             Connection con=DriverManager.getConnection(
                     "jdbc:mysql://localhost:3306/world","root","Dap20040812");
             Statement stmt=con.createStatement();
-            ResultSet rs=stmt.executeQuery("show databases;");
-            System.out.println("Connected");
-        }
+            ResultSet rs=stmt.executeQuery("SELECT name FROM country WHERE name = 'Colombia'");
+            while ( rs.next() ) {
+                String Name = rs.getString("Name");
+                System.out.println(Name);
+            }
+            con.close();        }
         catch(Exception e)
         {
             System.out.println(e);

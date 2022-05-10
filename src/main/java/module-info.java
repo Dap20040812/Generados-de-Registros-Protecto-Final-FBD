@@ -1,4 +1,4 @@
-module com.example.projectoregistros {
+module entities {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.web;
@@ -10,7 +10,8 @@ module com.example.projectoregistros {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires java.sql;
+    requires java.desktop;
 
-    opens com.example.projectoregistros to javafx.fxml;
-    exports com.example.projectoregistros;
+    opens entities to javafx.fxml;
+    exports entities;
 }
