@@ -10,7 +10,7 @@ public class main {
         try
         {
             Connection con=DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/world","root","Dap20040812");
+                    "jdbc:mysql://localhost:3306/world","root","Lucasacero13");
             Statement stmt=con.createStatement();
             ResultSet rs=stmt.executeQuery("SELECT name FROM country WHERE name = 'Colombia'");
             while ( rs.next() ) {
