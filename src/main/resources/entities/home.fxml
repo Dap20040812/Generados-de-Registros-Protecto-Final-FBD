@@ -3,28 +3,70 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="entities.Home">
+<AnchorPane prefHeight="522.0" prefWidth="1313.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="entities.Home">
     <children>
-        <TabPane layoutX="6.0" prefHeight="400.0" prefWidth="606.0" tabClosingPolicy="UNAVAILABLE">
+        <TabPane layoutX="6.0" layoutY="-1.0" prefHeight="522.0" prefWidth="1313.0" tabClosingPolicy="UNAVAILABLE">
             <tabs>
                 <Tab text="GlobalTab">
                     <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="171.0" prefWidth="387.0" />
                     </content>
                 </Tab>
-                <Tab text="CityTab">
+                <Tab fx:id="myCityTab" text="CityTab">
                     <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <TableView fx:id="myCityTable" prefHeight="371.0" prefWidth="606.0">
+                                    <columns>
+                                        <TableColumn fx:id="myCityCode" prefWidth="105.0" text="CountryCode" />
+                                        <TableColumn fx:id="myCityDis" prefWidth="122.0" text="Distrcit" />
+                                        <TableColumn fx:id="myCityID" prefWidth="90.0" text="ID" />
+                                        <TableColumn fx:id="myCityName" prefWidth="124.0" text="Name" />
+                                        <TableColumn fx:id="myCityPopu" prefWidth="164.0" text="Population" />
+                                    </columns>
+                                </TableView>
+                            </children></AnchorPane>
                     </content>
                 </Tab>
                 <Tab text="CountryTab">
                     <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="427.0" prefWidth="969.0">
+                            <children>
+                                <TableView prefHeight="497.0" prefWidth="1313.0">
+                                    <columns>
+                                        <TableColumn prefWidth="63.0" text="Code" />
+                                        <TableColumn minWidth="0.0" prefWidth="77.0" text="Name" />
+                                        <TableColumn prefWidth="72.0" text="Continent" />
+                                        <TableColumn prefWidth="85.0" text="Region" />
+                                        <TableColumn prefWidth="105.0" text="SurfaceArea" />
+                                        <TableColumn prefWidth="100.0" text="IndepYear" />
+                                        <TableColumn prefWidth="91.0" text="Population" />
+                                        <TableColumn prefWidth="113.0" text="LifeExpectancy" />
+                                        <TableColumn prefWidth="81.0" text="GNP" />
+                                        <TableColumn prefWidth="86.0" text="GNPOld" />
+                                        <TableColumn prefWidth="99.0" text="LocalName" />
+                                        <TableColumn prefWidth="117.0" text="GovernmentForm" />
+                                        <TableColumn minWidth="0.0" prefWidth="94.0" text="HeadOfState" />
+                                        <TableColumn prefWidth="67.0" text="Capital" />
+                                        <TableColumn prefWidth="62.0" text="Code2" />
+                                    </columns>
+                                </TableView>
+                            </children></AnchorPane>
                     </content>
                 </Tab>
                 <Tab text="CountryLanguageTab">
                     <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <TableView prefHeight="371.0" prefWidth="606.0">
+                                    <columns>
+                                        <TableColumn prefWidth="119.0" text="CountryCode" />
+                                        <TableColumn prefWidth="153.0" text="Language" />
+                                        <TableColumn prefWidth="172.0" text="IsOfficial" />
+                                        <TableColumn minWidth="0.0" prefWidth="161.0" text="Percentage" />
+                                    </columns>
+                                </TableView>
+                            </children></AnchorPane>
                     </content>
                 </Tab>
                 <Tab text="TestTab">
@@ -38,11 +80,5 @@
                 </Tab>
             </tabs>
         </TabPane>
-      <TableView layoutX="50.0" layoutY="50.0" prefHeight="300.0" prefWidth="500.0">
-        <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
-        </columns>
-      </TableView>
     </children>
 </AnchorPane>
