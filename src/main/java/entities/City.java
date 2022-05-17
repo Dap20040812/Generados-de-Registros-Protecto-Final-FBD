@@ -6,7 +6,7 @@ import javafx.beans.property.SimpleStringProperty;
 import java.util.logging.SimpleFormatter;
 
 public class City {
-    static SimpleStringProperty Id = new SimpleStringProperty();
+    SimpleStringProperty Id = new SimpleStringProperty();
     SimpleStringProperty Name = new SimpleStringProperty();
     SimpleStringProperty CountryCode;
     SimpleStringProperty District;
@@ -20,7 +20,7 @@ public class City {
         this.Population = new SimpleStringProperty(population);
     }
 
-    public static String getID() {
+    public String getID() {
         return Id.get();
     }
 
