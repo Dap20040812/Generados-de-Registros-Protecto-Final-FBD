@@ -23,13 +23,13 @@
                     <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="564.0" prefWidth="1306.0">
                             <children>
-                                <TableView fx:id="myCityTable" layoutX="5.0" prefHeight="564.0" prefWidth="601.0" style="-fx-background-color: #6C9AA6; -fx-border-color: black; -fx-border-width: 4; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 0.0, 0.0);">
+                                <TableView fx:id="myCityTable" layoutX="5.0" prefHeight="564.0" prefWidth="601.0">
                                     <columns>
-                                        <TableColumn fx:id="myCityCode" prefWidth="105.0" style="-fx-background-color: #618994; -fx-border-color: black;" text="CountryCode" />
-                                        <TableColumn fx:id="myCityDis" prefWidth="122.0" style="-fx-background-color: #618994; -fx-border-color: black;" text="Distrcit" />
-                                        <TableColumn fx:id="myCityID" prefWidth="90.0" style="-fx-background-color: #618994; -fx-border-color: black;" text="ID" />
-                                        <TableColumn fx:id="myCityName" prefWidth="124.0" style="-fx-background-color: #618994; -fx-border-color: black;" text="Name" />
-                                        <TableColumn fx:id="myCityPopu" prefWidth="164.0" style="-fx-background-color: #618994; -fx-border-color: black;" text="Population" />
+                                        <TableColumn fx:id="myCityCode" prefWidth="105.0" text="CountryCode" />
+                                        <TableColumn fx:id="myCityDis" prefWidth="122.0" text="Distrcit" />
+                                        <TableColumn fx:id="myCityID" prefWidth="90.0" text="ID" />
+                                        <TableColumn fx:id="myCityName" prefWidth="124.0" text="Name" />
+                                        <TableColumn fx:id="myCityPopu" prefWidth="164.0" text="Population" />
                                     </columns>
                                 </TableView>
                         <Button layoutX="623.0" layoutY="455.0" mnemonicParsing="false" prefHeight="95.0" prefWidth="102.0" style="-fx-background-color: #2105BAED; -fx-border-color: black; -fx-border-radius: 50%; -fx-background-radius: 50%; -fx-border-width: 3;" text="🔎" textFill="WHITE">
@@ -37,17 +37,17 @@
                               <Font size="32.0" />
                            </font>
                         </Button>
-                        <Button layoutX="1059.0" layoutY="457.0" mnemonicParsing="false" prefHeight="87.0" prefWidth="96.0" style="-fx-background-color: #BA0000ED; -fx-border-color: black; -fx-border-radius: 50%; -fx-background-radius: 50%; -fx-border-width: 3;" text="🗑" textFill="WHITE">
+                        <Button layoutX="1059.0" layoutY="457.0" mnemonicParsing="false" onAction="#deleteCity" prefHeight="87.0" prefWidth="96.0" style="-fx-background-color: #BA0000ED; -fx-border-color: black; -fx-border-radius: 50%; -fx-background-radius: 50%; -fx-border-width: 3;" text="🗑" textFill="WHITE">
                            <font>
                               <Font size="42.0" />
                            </font>
                         </Button>
-                        <Button layoutX="747.0" layoutY="454.0" mnemonicParsing="false" prefHeight="95.0" prefWidth="102.0" style="-fx-background-color: #35A150ED; -fx-border-color: black; -fx-border-radius: 50%; -fx-background-radius: 50%; -fx-border-width: 3;" text="+" textFill="WHITE">
+                        <Button layoutX="747.0" layoutY="454.0" mnemonicParsing="false" onAction="#añadirCity" prefHeight="95.0" prefWidth="102.0" style="-fx-background-color: #35A150ED; -fx-border-color: black; -fx-border-radius: 50%; -fx-background-radius: 50%; -fx-border-width: 3;" text="+" textFill="WHITE">
                            <font>
                               <Font size="43.0" />
                            </font>
                         </Button>
-                        <Button layoutX="1176.0" layoutY="455.0" mnemonicParsing="false" prefHeight="96.0" prefWidth="96.0" style="-fx-background-color: #BA0fffED; -fx-border-color: black; -fx-border-radius: 50%; -fx-background-radius: 50%; -fx-border-width: 3;" text="⬆" textFill="WHITE">
+                        <Button fx:id="update" layoutX="1179.0" layoutY="455.0" mnemonicParsing="false" onAction="#updateCity" prefHeight="96.0" prefWidth="96.0" style="-fx-background-color: #BA0fffED; -fx-border-color: black; -fx-border-radius: 50%; -fx-background-radius: 50%; -fx-border-width: 3;" text="⬆" textFill="WHITE">
                            <font>
                               <Font size="27.0" />
                            </font>
@@ -77,17 +77,22 @@
                               <Font size="33.0" />
                            </font>
                         </Label>
-                        <TextField layoutX="849.0" layoutY="73.0" prefHeight="31.0" prefWidth="188.0" />
-                        <TextField layoutX="943.0" layoutY="130.0" prefHeight="31.0" prefWidth="188.0" />
-                        <TextField layoutX="859.0" layoutY="189.0" prefHeight="31.0" prefWidth="188.0" />
-                        <TextField layoutX="787.0" layoutY="249.0" prefHeight="31.0" prefWidth="188.0" />
-                        <TextField layoutX="912.0" layoutY="309.0" prefHeight="31.0" prefWidth="188.0" />
+                        <TextField fx:id="cityName" layoutX="844.0" layoutY="73.0" prefHeight="31.0" prefWidth="188.0" />
+                        <TextField fx:id="cityCode" layoutX="943.0" layoutY="130.0" prefHeight="31.0" prefWidth="188.0" />
+                        <TextField fx:id="cityDistrict" layoutX="859.0" layoutY="189.0" prefHeight="31.0" prefWidth="188.0" />
+                        <TextField fx:id="cityId" layoutX="787.0" layoutY="249.0" prefHeight="31.0" prefWidth="188.0" />
+                        <TextField fx:id="cityPopulation" layoutX="912.0" layoutY="309.0" prefHeight="31.0" prefWidth="188.0" />
+                        <Button fx:id="ok" layoutX="1179.0" layoutY="455.0" mnemonicParsing="false" onAction="#updateCity1" prefHeight="96.0" prefWidth="96.0" style="-fx-background-color: #BA0fffED; -fx-border-color: black; -fx-border-radius: 50%; -fx-background-radius: 50%; -fx-border-width: 3;" text="OK" textFill="WHITE">
+                           <font>
+                              <Font size="27.0" />
+                           </font>
+                        </Button>
                             </children></AnchorPane>
                     </content>
                 </Tab>
                 <Tab text="CountryTab">
                     <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0">
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="777.0" prefWidth="1318.0">
                             <children>
                                 <TableView fx:id="myCountryTable">
                                     <columns>
@@ -108,6 +113,116 @@
                                         <TableColumn fx:id="myCountryCode2" prefWidth="62.0" text="Code2" />
                                     </columns>
                                 </TableView>
+                        <Button layoutX="1069.0" layoutY="595.0" mnemonicParsing="false" prefHeight="95.0" prefWidth="102.0" style="-fx-background-color: #2105BAED; -fx-border-color: black; -fx-border-radius: 50%; -fx-background-radius: 50%; -fx-border-width: 3;" text="🔎" textFill="WHITE">
+                           <font>
+                              <Font size="32.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="1072.0" layoutY="415.0" mnemonicParsing="false" prefHeight="87.0" prefWidth="96.0" style="-fx-background-color: #BA0000ED; -fx-border-color: black; -fx-border-radius: 50%; -fx-background-radius: 50%; -fx-border-width: 3;" text="🗑" textFill="WHITE">
+                           <font>
+                              <Font size="42.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="883.0" layoutY="414.0" mnemonicParsing="false" prefHeight="95.0" prefWidth="102.0" style="-fx-background-color: #35A150ED; -fx-border-color: black; -fx-border-radius: 50%; -fx-background-radius: 50%; -fx-border-width: 3;" text="+" textFill="WHITE">
+                           <font>
+                              <Font size="43.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="886.0" layoutY="594.0" mnemonicParsing="false" prefHeight="96.0" prefWidth="96.0" style="-fx-background-color: #BA0fffED; -fx-border-color: black; -fx-border-radius: 50%; -fx-background-radius: 50%; -fx-border-width: 3;" text="⬆" textFill="WHITE">
+                           <font>
+                              <Font size="27.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="14.0" layoutY="431.0" prefHeight="63.0" prefWidth="118.0" text="Name :">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="15.0" layoutY="565.0" prefHeight="49.0" prefWidth="203.0" text="SurfaceArea :">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="12.0" layoutY="484.0" prefHeight="49.0" prefWidth="165.0" text="Continent :">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="12.0" layoutY="605.0" prefHeight="49.0" prefWidth="175.0" text="IndepYear :">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="523.0" prefHeight="49.0" prefWidth="131.0" text="Region :">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="159.0" layoutY="577.0" prefHeight="20.0" prefWidth="170.0" />
+                        <TextField layoutX="110.0" layoutY="535.0" prefHeight="20.0" prefWidth="170.0" />
+                        <TextField layoutX="99.0" layoutY="450.0" prefHeight="20.0" prefWidth="170.0" />
+                        <TextField layoutX="133.0" layoutY="496.0" prefHeight="20.0" prefWidth="170.0" />
+                        <TextField layoutX="94.0" layoutY="410.0" prefHeight="20.0" prefWidth="170.0" />
+                        <Label layoutX="14.0" layoutY="391.0" prefHeight="63.0" prefWidth="118.0" text="Code :">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="145.0" layoutY="617.0" prefHeight="20.0" prefWidth="170.0" />
+                        <Label layoutX="12.0" layoutY="642.0" prefHeight="49.0" prefWidth="175.0" text="Population :">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="145.0" layoutY="654.0" prefHeight="20.0" prefWidth="170.0" />
+                        <Label layoutX="12.0" layoutY="679.0" prefHeight="49.0" prefWidth="235.0" text="LifeExpectancy :">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="184.0" layoutY="690.0" prefHeight="20.0" prefWidth="170.0" />
+                        <Label layoutX="389.0" layoutY="398.0" prefHeight="49.0" prefWidth="235.0" text="GNP :">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="454.0" layoutY="410.0" prefHeight="20.0" prefWidth="170.0" />
+                        <Label layoutX="383.0" layoutY="438.0" prefHeight="49.0" prefWidth="235.0" text="GNPOld :">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="489.0" layoutY="450.0" prefHeight="20.0" prefWidth="170.0" />
+                        <Label layoutX="383.0" layoutY="484.0" prefHeight="49.0" prefWidth="235.0" text="LocalName :">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="519.0" layoutY="496.0" prefHeight="20.0" prefWidth="170.0" />
+                        <Label layoutX="383.0" layoutY="523.0" prefHeight="49.0" prefWidth="283.0" text="GovernmentForm :">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="588.0" layoutY="535.0" prefHeight="20.0" prefWidth="170.0" />
+                        <Label layoutX="383.0" layoutY="565.0" prefHeight="49.0" prefWidth="235.0" text="HeadOfState :">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="533.0" layoutY="577.0" prefHeight="20.0" prefWidth="170.0" />
+                        <Label layoutX="383.0" layoutY="605.0" prefHeight="49.0" prefWidth="235.0" text="Capital :">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="476.0" layoutY="617.0" prefHeight="20.0" prefWidth="170.0" />
+                        <Label layoutX="383.0" layoutY="642.0" prefHeight="49.0" prefWidth="235.0" text="Code2 : ">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="476.0" layoutY="654.0" prefHeight="20.0" prefWidth="170.0" />
                             </children></AnchorPane>
                     </content>
                 </Tab>
@@ -115,14 +230,58 @@
                     <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0">
                             <children>
-                                <TableView>
+                                <TableView fx:id="myLanguageTable">
                                     <columns>
-                                        <TableColumn prefWidth="119.0" text="CountryCode" />
-                                        <TableColumn prefWidth="153.0" text="Language" />
-                                        <TableColumn prefWidth="172.0" text="IsOfficial" />
-                                        <TableColumn minWidth="0.0" prefWidth="161.0" text="Percentage" />
+                                        <TableColumn fx:id="myLanguageCode" prefWidth="119.0" text="CountryCode" />
+                                        <TableColumn fx:id="myLanguageLanguage" prefWidth="153.0" text="Language" />
+                                        <TableColumn fx:id="myLanguageOfficial" prefWidth="172.0" text="IsOfficial" />
+                                        <TableColumn fx:id="myLanguagePercentage" minWidth="0.0" prefWidth="161.0" text="Percentage" />
                                     </columns>
                                 </TableView>
+                        <Button layoutX="947.0" layoutY="319.0" mnemonicParsing="false" prefHeight="95.0" prefWidth="102.0" style="-fx-background-color: #2105BAED; -fx-border-color: black; -fx-border-radius: 50%; -fx-background-radius: 50%; -fx-border-width: 3;" text="🔎" textFill="WHITE">
+                           <font>
+                              <Font size="32.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="724.0" layoutY="318.0" mnemonicParsing="false" prefHeight="87.0" prefWidth="96.0" style="-fx-background-color: #BA0000ED; -fx-border-color: black; -fx-border-radius: 50%; -fx-background-radius: 50%; -fx-border-width: 3;" text="🗑" textFill="WHITE">
+                           <font>
+                              <Font size="42.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="615.0" layoutY="317.0" mnemonicParsing="false" prefHeight="95.0" prefWidth="102.0" style="-fx-background-color: #35A150ED; -fx-border-color: black; -fx-border-radius: 50%; -fx-background-radius: 50%; -fx-border-width: 3;" text="+" textFill="WHITE">
+                           <font>
+                              <Font size="43.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="1061.0" layoutY="318.0" mnemonicParsing="false" prefHeight="96.0" prefWidth="96.0" style="-fx-background-color: #BA0fffED; -fx-border-color: black; -fx-border-radius: 50%; -fx-background-radius: 50%; -fx-border-width: 3;" text="⬆" textFill="WHITE">
+                           <font>
+                              <Font size="27.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="635.0" layoutY="48.0" prefHeight="63.0" prefWidth="200.0" text="ContryCode :">
+                           <font>
+                              <Font size="33.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="787.0" layoutY="175.0" prefHeight="31.0" prefWidth="188.0" />
+                        <TextField layoutX="810.0" layoutY="113.0" prefHeight="31.0" prefWidth="188.0" />
+                        <TextField layoutX="841.0" layoutY="65.0" prefHeight="31.0" prefWidth="188.0" />
+                        <Label layoutX="635.0" layoutY="97.0" prefHeight="63.0" prefWidth="200.0" text="Language : ">
+                           <font>
+                              <Font size="33.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="635.0" layoutY="159.0" prefHeight="63.0" prefWidth="200.0" text="IsOfficial :">
+                           <font>
+                              <Font size="33.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="635.0" layoutY="222.0" prefHeight="63.0" prefWidth="200.0" text="Percentage :">
+                           <font>
+                              <Font size="33.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="824.0" layoutY="238.0" prefHeight="31.0" prefWidth="188.0" />
                             </children></AnchorPane>
                     </content>
                 </Tab>

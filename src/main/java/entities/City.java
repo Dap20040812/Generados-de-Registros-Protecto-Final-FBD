@@ -39,4 +39,24 @@ public class City {
     public String getPopulation() {
         return Population.get();
     }
+
+    public void setId(String id) {
+        this.Id.set(id);
+    }
+
+    public void setName(String name) {
+        this.Name.set(name);
+    }
+
+    public void setCountryCode(String countryCode) {
+        this.CountryCode.set(countryCode);
+    }
+
+    public void setDistrict(String district) {
+        this.District.set(district);
+    }
+
+    public void setPopulation(String population) {
+        this.Population.set(population);
+    }
 }

@@ -12,8 +12,8 @@ public class Country {
     SimpleStringProperty IndepYear;
     SimpleStringProperty Population;
     SimpleStringProperty LifeExpectancy;
-    SimpleStringProperty GNP;
-    SimpleStringProperty GNPOld;
+    SimpleStringProperty Gnp;
+    SimpleStringProperty GnpOld;
     SimpleStringProperty LocalName;
     SimpleStringProperty GovernmentForm;
     SimpleStringProperty HeadOfState;
@@ -29,12 +29,72 @@ public class Country {
         IndepYear = new SimpleStringProperty(indepYear);
         Population = new SimpleStringProperty(population);
         LifeExpectancy = new SimpleStringProperty(lifeExpectancy);
-        this.GNP = new SimpleStringProperty(GNP);
-        this.GNPOld = new SimpleStringProperty(GNPOld);
+        Gnp = new SimpleStringProperty(GNP);
+        GnpOld = new SimpleStringProperty(GNPOld);
         LocalName = new SimpleStringProperty(localName);
         GovernmentForm = new SimpleStringProperty(governmentForm);
         HeadOfState = new SimpleStringProperty(headOfState);
         Capital = new SimpleStringProperty(capital);
         Code2 = new SimpleStringProperty(code2);
+    }
+
+    public String getCode() {
+        return Code.get();
+    }
+
+    public String getName() {
+        return Name.get();
+    }
+
+    public String getContinent() {
+        return Continent.get();
+    }
+
+    public String getRegion() {
+        return Region.get();
+    }
+
+    public String getSurfaceArea() {
+        return SurfaceArea.get();
+    }
+
+    public String getIndepYear() {
+        return IndepYear.get();
+    }
+
+    public String getPopulation() {
+        return Population.get();
+    }
+
+    public String getLifeExpectancy() {
+        return LifeExpectancy.get();
+    }
+
+    public String getGnp() {
+        return Gnp.get();
+    }
+
+    public String getGnpOld() {
+        return GnpOld.get();
+    }
+
+    public String getLocalName() {
+        return LocalName.get();
+    }
+
+    public String getGovernmentForm() {
+        return GovernmentForm.get();
+    }
+
+    public String getHeadOfState() {
+        return HeadOfState.get();
+    }
+
+    public String getCapital() {
+        return Capital.get();
+    }
+
+    public String getCode2() {
+        return Code2.get();
     }
 }
