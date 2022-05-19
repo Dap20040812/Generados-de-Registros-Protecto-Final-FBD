@@ -27,9 +27,12 @@ public class Login {
     @FXML private TextField myUserField;
     @FXML private TextField myPasswordText;
 
+    public static String user;
+    public static String password;
+
     public void switchToHome(ActionEvent event) throws IOException {
-        String user = myUserField.getText();
-        String password = myPasswordText.getText();
+        user = myUserField.getText();
+        password = myPasswordText.getText();
         connect(user,password);
         if(sign)
         {
@@ -37,6 +40,8 @@ public class Login {
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
+            stage.setFullScreen(true);
+            stage.setFullScreenExitHint("Exit");
             stage.show();
         }
     }
