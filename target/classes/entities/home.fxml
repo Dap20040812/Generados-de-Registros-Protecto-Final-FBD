@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
@@ -9,14 +10,37 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="entities.Home">
     <children>
-        <TabPane layoutX="6.0" layoutY="-1.0" tabClosingPolicy="UNAVAILABLE">
+        <TabPane tabClosingPolicy="UNAVAILABLE">
             <tabs>
                 <Tab text="GlobalTab">
                     <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" />
+                        <AnchorPane minHeight="0.0" minWidth="0.0">
+                     <children>
+                        <Text layoutX="474.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Generador de Registro">
+                           <font>
+                              <Font size="37.0" />
+                           </font>
+                        </Text>
+                        <CheckBox layoutX="82.0" layoutY="108.0" mnemonicParsing="false" text="City">
+                           <font>
+                              <Font size="29.0" />
+                           </font>
+                        </CheckBox>
+                        <CheckBox layoutX="82.0" layoutY="167.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="213.0" text="Country">
+                           <font>
+                              <Font size="29.0" />
+                           </font>
+                        </CheckBox>
+                        <CheckBox layoutX="82.0" layoutY="226.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="294.0" text="CountryLanguage">
+                           <font>
+                              <Font size="29.0" />
+                           </font>
+                        </CheckBox>
+                     </children></AnchorPane>
                     </content>
                 </Tab>
                 <Tab fx:id="myCityTab" text="CityTab">
@@ -223,19 +247,11 @@
                                     </font>
                                 </Label>
                                 <TextField fx:id="countryCode2" layoutX="476.0" layoutY="654.0" prefHeight="20.0" prefWidth="170.0" />
-<<<<<<< HEAD
-                        <Button fx:id="ok2" layoutX="767.0" layoutY="606.0" mnemonicParsing="false" onAction="#updateCountry1" prefHeight="96.0" prefWidth="96.0" style="-fx-background-color: #BA0fffED; -fx-border-color: black; -fx-border-radius: 50%; -fx-background-radius: 50%; -fx-border-width: 3;" text="OK" textFill="WHITE">
-                           <font>
-                              <Font size="27.0" />
-                           </font>
-                        </Button>
-=======
                                 <Button fx:id="ok2" layoutX="886.0" layoutY="595.0" mnemonicParsing="false" onAction="#updateCountry1" prefHeight="96.0" prefWidth="96.0" style="-fx-background-color: #BA0fffED; -fx-border-color: black; -fx-border-radius: 50%; -fx-background-radius: 50%; -fx-border-width: 3;" text="OK" textFill="WHITE">
                                     <font>
                                         <Font size="27.0" />
                                     </font>
                                 </Button>
->>>>>>> d2e668de393fb9c84734d884ca7b649a231638fc
                             </children></AnchorPane>
                     </content>
                 </Tab>
@@ -295,36 +311,15 @@
                                     </font>
                                 </Label>
                                 <TextField fx:id="languagePercentage" layoutX="824.0" layoutY="238.0" prefHeight="31.0" prefWidth="188.0" />
-<<<<<<< HEAD
-                        <Button fx:id="ok1" layoutX="1061.0" layoutY="319.0" mnemonicParsing="false" onAction="#updateLanguage1" prefHeight="96.0" prefWidth="96.0" style="-fx-background-color: #BA0fffED; -fx-border-color: black; -fx-border-radius: 50%; -fx-background-radius: 50%; -fx-border-width: 3;" text="OK" textFill="WHITE">
-                           <font>
-                              <Font size="27.0" />
-                           </font>
-                        </Button>
-                            </children></AnchorPane>
-                    </content>
-                </Tab>
-                <Tab text="TestTab">
-                    <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0">
-                            <children>
-                                <Label fx:id="aLabel" layoutX="213.0" layoutY="121.0" prefHeight="38.0" prefWidth="132.0" text="[somethig shown here]" textAlignment="CENTER" />
-                                <Button fx:id="aButton" layoutX="217.0" layoutY="186.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="124.0" text="Connect" />
-=======
                                 <Button fx:id="ok1" layoutX="1061.0" layoutY="319.0" mnemonicParsing="false" onAction="#updateLanguage1" prefHeight="96.0" prefWidth="96.0" style="-fx-background-color: #BA0fffED; -fx-border-color: black; -fx-border-radius: 50%; -fx-background-radius: 50%; -fx-border-width: 3;" text="OK" textFill="WHITE">
                                     <font>
                                         <Font size="27.0" />
                                     </font>
                                 </Button>
->>>>>>> d2e668de393fb9c84734d884ca7b649a231638fc
                             </children></AnchorPane>
                     </content>
                 </Tab>
             </tabs>
         </TabPane>
     </children>
-<<<<<<< HEAD
 </AnchorPane>
-=======
-</AnchorPane>
->>>>>>> d2e668de393fb9c84734d884ca7b649a231638fc
