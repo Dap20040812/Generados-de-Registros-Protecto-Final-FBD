@@ -97,4 +97,64 @@ public class Country {
     public String getCode2() {
         return Code2.get();
     }
+
+    public void setCode(String code) {
+        this.Code.set(code);
+    }
+
+    public void setName(String name) {
+        this.Name.set(name);
+    }
+
+    public void setContinent(String continent) {
+        this.Continent.set(continent);
+    }
+
+    public void setRegion(String region) {
+        this.Region.set(region);
+    }
+
+    public void setSurfaceArea(String surfaceArea) {
+        this.SurfaceArea.set(surfaceArea);
+    }
+
+    public void setIndepYear(String indepYear) {
+        this.IndepYear.set(indepYear);
+    }
+
+    public void setPopulation(String population) {
+        this.Population.set(population);
+    }
+
+    public void setLifeExpectancy(String lifeExpectancy) {
+        this.LifeExpectancy.set(lifeExpectancy);
+    }
+
+    public void setGnp(String gnp) {
+        this.Gnp.set(gnp);
+    }
+
+    public void setGnpOld(String gnpOld) {
+        this.GnpOld.set(gnpOld);
+    }
+
+    public void setLocalName(String localName) {
+        this.LocalName.set(localName);
+    }
+
+    public void setGovernmentForm(String governmentForm) {
+        this.GovernmentForm.set(governmentForm);
+    }
+
+    public void setHeadOfState(String headOfState) {
+        this.HeadOfState.set(headOfState);
+    }
+
+    public void setCapital(String capital) {
+        this.Capital.set(capital);
+    }
+
+    public void setCode2(String code2) {
+        this.Code2.set(code2);
+    }
 }

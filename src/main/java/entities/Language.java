@@ -47,4 +47,20 @@ public class Language {
     public SimpleStringProperty percentageProperty() {
         return Percentage;
     }
+
+    public void setCountryCode(String countryCode) {
+        this.CountryCode.set(countryCode);
+    }
+
+    public void setLanguage(String language) {
+        this.Language.set(language);
+    }
+
+    public void setIsOfficial(String isOfficial) {
+        this.IsOfficial.set(isOfficial);
+    }
+
+    public void setPercentage(String percentage) {
+        this.Percentage.set(percentage);
+    }
 }
