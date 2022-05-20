@@ -4,16 +4,27 @@ import javafx.beans.property.SimpleStringProperty;
 
 public class Language {
 
+<<<<<<< HEAD
     SimpleStringProperty CountryCode = new SimpleStringProperty();
+=======
+    SimpleStringProperty CountryCode;
+>>>>>>> d2e668de393fb9c84734d884ca7b649a231638fc
     SimpleStringProperty Language;
     SimpleStringProperty IsOfficial;
     SimpleStringProperty Percentage;
 
     public Language(String countryCode, String language, String isOfficial, String percentage) {
+<<<<<<< HEAD
        this.CountryCode = new SimpleStringProperty(countryCode);
        this.Language = new SimpleStringProperty(language);
        this.IsOfficial = new SimpleStringProperty(isOfficial);
        this.Percentage = new SimpleStringProperty(percentage);
+=======
+        CountryCode = new SimpleStringProperty(countryCode);
+        Language = new SimpleStringProperty(language);
+        IsOfficial = new SimpleStringProperty(isOfficial);
+        Percentage = new SimpleStringProperty(percentage);
+>>>>>>> d2e668de393fb9c84734d884ca7b649a231638fc
     }
 
     public String getCountryCode() {
@@ -63,4 +74,8 @@ public class Language {
     public void setPercentage(String percentage) {
         this.Percentage.set(percentage);
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> d2e668de393fb9c84734d884ca7b649a231638fc

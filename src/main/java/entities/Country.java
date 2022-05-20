@@ -157,4 +157,8 @@ public class Country {
     public void setCode2(String code2) {
         this.Code2.set(code2);
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> d2e668de393fb9c84734d884ca7b649a231638fc

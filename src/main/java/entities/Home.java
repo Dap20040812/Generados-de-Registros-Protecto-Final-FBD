@@ -190,6 +190,13 @@ public class Home implements Initializable {
 
         ok.setDisable(true);
         ok.setOpacity(0);
+<<<<<<< HEAD
+=======
+        ok1.setDisable(true);
+        ok1.setOpacity(0);
+        ok2.setDisable(true);
+        ok2.setOpacity(0);
+>>>>>>> d2e668de393fb9c84734d884ca7b649a231638fc
         GenerateCity();
         GenerateCountry();
         GenerateLanguage();
@@ -311,6 +318,10 @@ public class Home implements Initializable {
             }
         }
         myCityTable.setItems(cities);
+<<<<<<< HEAD
+=======
+        myCityTable.refresh();
+>>>>>>> d2e668de393fb9c84734d884ca7b649a231638fc
         try {
             Connection con = DriverManager.getConnection(
                     "jdbc:mysql://localhost:3306/world", Login.user, Login.password);
@@ -322,13 +333,48 @@ public class Home implements Initializable {
         catch (Exception e){
             System.out.println(e);
         }
+<<<<<<< HEAD
+=======
+        cityName.setText("");
+        cityId.setText("");
+        cityPopulation.setText("");
+        cityDistrict.setText("");
+        cityCode.setText("");
+>>>>>>> d2e668de393fb9c84734d884ca7b649a231638fc
         update.setDisable(false);
         ok.setDisable(true);
         ok.setOpacity(0);
         update.setOpacity(1);
     }
 
+<<<<<<< HEAD
     // Language
+=======
+    @FXML
+    private void searchCity(ActionEvent event){
+
+        String Code = "ContryCode like "+ cityCode.getText();
+        try {
+            Connection con = DriverManager.getConnection(
+                    "jdbc:mysql://localhost:3306/world", Login.user, Login.password);
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT FROM city WHERE"+Code);
+            while (rs.next()) {
+                String  Name = rs.getString("Name");
+                String  CountryCode = rs.getString("CountryCode");
+                String District = rs.getString("District");
+                String Population = rs.getString("Population");
+
+            }
+            con.close();
+
+            System.out.println("ok");
+        }
+        catch (Exception e){
+            System.out.println(e);
+        }
+    }
+>>>>>>> d2e668de393fb9c84734d884ca7b649a231638fc
 
     @FXML
     private void añadirLanguage(ActionEvent event){
@@ -418,6 +464,14 @@ public class Home implements Initializable {
         catch (Exception e){
             System.out.println(e);
         }
+<<<<<<< HEAD
+=======
+        myLanguageTable.refresh();
+        languageCountryCode.setText("");
+        languageLanguage.setText("");
+        languageIsOfficial.setText("");
+        languagePercentage.setText("");
+>>>>>>> d2e668de393fb9c84734d884ca7b649a231638fc
         update1.setDisable(false);
         ok1.setDisable(true);
         ok1.setOpacity(0);
@@ -451,7 +505,11 @@ public class Home implements Initializable {
             Connection con = DriverManager.getConnection(
                     "jdbc:mysql://localhost:3306/world", Login.user, Login.password);
             Statement stmt = con.createStatement();
+<<<<<<< HEAD
             stmt.execute("INSERT INTO city VALUES ('"+cityId.getText()+"','"+cityName.getText()+"','"+cityCode.getText()+"','"+cityDistrict.getText()+"','"+cityPopulation.getText()+"')");
+=======
+            stmt.execute("INSERT INTO country VALUES ('"+country.Code.getValue()+"','"+country.Name.getValue()+"','"+country.Continent.getValue()+"','"+country.Region.getValue()+"','"+country.SurfaceArea.getValue()+"','"+country.IndepYear.getValue()+"','"+country.Population.getValue()+"','"+country.LifeExpectancy.getValue()+"','"+country.Gnp.getValue()+"','"+country.GnpOld.getValue()+"','"+country.LocalName.getValue()+"','"+country.GovernmentForm.getValue()+"','"+country.HeadOfState.getValue()+"','"+country.Capital.getValue()+"','"+country.Code2.getValue()+"')");
+>>>>>>> d2e668de393fb9c84734d884ca7b649a231638fc
             con.close();
             System.out.println("ok");
         }
@@ -571,12 +629,36 @@ public class Home implements Initializable {
         catch (Exception e){
             System.out.println(e);
         }
+<<<<<<< HEAD
+=======
+        myCountryTable.refresh();
+        countryCode.setText("");
+        countryName.setText("");
+        countryContinent.setText("");
+        countryRegion.setText("");
+        countrySurfaceArea.setText("");
+        countryIndepYear.setText("");
+        countryPopulation.setText("");
+        countryLifeExpectancy.setText("");
+        countryGNP.setText("");
+        countryGNPOld.setText("");
+        countryLocalName.setText("");
+        countryGovernmentForm.setText("");
+        countryHeadOfState.setText("");
+        countryCapital.setText("");
+        countryCode2.setText("");
+>>>>>>> d2e668de393fb9c84734d884ca7b649a231638fc
         update2.setDisable(false);
         ok2.setDisable(true);
         ok2.setOpacity(0);
         update2.setOpacity(1);
     }
+<<<<<<< HEAD
 
 
 
 }
+=======
+}
+
+>>>>>>> d2e668de393fb9c84734d884ca7b649a231638fc

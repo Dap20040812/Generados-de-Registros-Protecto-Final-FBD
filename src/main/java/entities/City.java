@@ -59,4 +59,8 @@ public class City {
     public void setPopulation(String population) {
         this.Population.set(population);
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> d2e668de393fb9c84734d884ca7b649a231638fc
