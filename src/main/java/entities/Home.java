@@ -38,7 +38,21 @@ public class Home implements Initializable {
     @FXML public TextField cityId;
     @FXML public TextField cityName;
     @FXML public TextField cityPopulation;
+    @FXML public TextField cityIDc1;
+    @FXML public TextField cityNamec1;
+    @FXML public TextField cityCodec1;
+    @FXML public TextField cityDistc1;
+    @FXML public TextField cityPopuc1;
 
+    //labels
+    @FXML public Label cityIDc;
+    @FXML public Label cityCodec;
+    @FXML public Label cityNamec;
+    @FXML public Label cityDistc;
+    @FXML public Label cityPopuc;
+
+    //checkbox
+    @FXML public  CheckBox cityCheck;
     //Country
 
     //Table
@@ -99,6 +113,8 @@ public class Home implements Initializable {
 
     @FXML public Button update1;
     @FXML public Button ok1;
+
+    @FXML public  CheckBox languageCheck;
 
     private final ObservableList<City> cities = FXCollections.observableArrayList();
     private final ObservableList<Country> countries = FXCollections.observableArrayList();
@@ -197,7 +213,26 @@ public class Home implements Initializable {
         GenerateCity();
         GenerateCountry();
         GenerateLanguage();
-
+        cityIDc.setOpacity(0);
+        cityIDc.setDisable(true);
+        cityIDc1.setOpacity(0);
+        cityIDc1.setDisable(true);
+        cityNamec.setOpacity(0);
+        cityNamec.setDisable(true);
+        cityNamec1.setOpacity(0);
+        cityNamec1.setDisable(true);
+        cityCodec.setOpacity(0);
+        cityCodec.setDisable(true);
+        cityCodec1.setOpacity(0);
+        cityCodec1.setDisable(true);
+        cityDistc.setOpacity(0);
+        cityDistc.setDisable(true);
+        cityDistc1.setOpacity(0);
+        cityDistc1.setDisable(true);
+        cityPopuc.setOpacity(0);
+        cityPopuc.setDisable(true);
+        cityPopuc1.setOpacity(0);
+        cityPopuc1.setDisable(true);
         myCityName.setCellValueFactory(new PropertyValueFactory<>("Name"));
         myCityCode.setCellValueFactory(new PropertyValueFactory<>("CountryCode"));
         myCityID.setCellValueFactory(new PropertyValueFactory<>("ID"));
@@ -221,6 +256,7 @@ public class Home implements Initializable {
         myCountryCapital.setCellValueFactory(new PropertyValueFactory<>("Capital"));
         myCountryCode2.setCellValueFactory(new PropertyValueFactory<>("Code2"));
         myCountryTable.setItems(countries);
+
 
         myLanguageCode.setCellValueFactory(new PropertyValueFactory<>("CountryCode"));
         myLanguageLanguage.setCellValueFactory(new PropertyValueFactory<>("Language"));
@@ -338,30 +374,7 @@ public class Home implements Initializable {
         update.setOpacity(1);
     }
 
-    @FXML
-    private void searchCity(ActionEvent event){
 
-        String Code = "ContryCode like "+ cityCode.getText();
-        try {
-            Connection con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/world", Login.user, Login.password);
-            Statement stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT FROM city WHERE"+Code);
-            while (rs.next()) {
-                String  Name = rs.getString("Name");
-                String  CountryCode = rs.getString("CountryCode");
-                String District = rs.getString("District");
-                String Population = rs.getString("Population");
-
-            }
-            con.close();
-
-            System.out.println("ok");
-        }
-        catch (Exception e){
-            System.out.println(e);
-        }
-    }
 
     @FXML
     private void añadirLanguage(ActionEvent event){
@@ -629,6 +642,103 @@ public class Home implements Initializable {
         ok2.setDisable(true);
         ok2.setOpacity(0);
         update2.setOpacity(1);
+    }
+
+    @FXML
+    private void checkCity(ActionEvent event){
+
+        if(cityCheck.isSelected())
+        {
+            cityIDc.setOpacity(1);
+            cityIDc.setDisable(false);
+            cityIDc1.setOpacity(1);
+            cityIDc1.setDisable(false);
+            cityNamec.setOpacity(1);
+            cityNamec.setDisable(false);
+            cityNamec1.setOpacity(1);
+            cityNamec1.setDisable(false);
+            cityCodec.setOpacity(1);
+            cityCodec.setDisable(false);
+            cityCodec1.setOpacity(1);
+            cityCodec1.setDisable(false);
+            cityDistc.setOpacity(1);
+            cityDistc.setDisable(false);
+            cityDistc1.setOpacity(1);
+            cityDistc1.setDisable(false);
+            cityPopuc.setOpacity(1);
+            cityPopuc.setDisable(false);
+            cityPopuc1.setOpacity(1);
+            cityPopuc1.setDisable(false);
+        } else{
+            cityIDc.setOpacity(0);
+            cityIDc.setDisable(true);
+            cityIDc1.setOpacity(0);
+            cityIDc1.setDisable(true);
+            cityNamec.setOpacity(0);
+            cityNamec.setDisable(true);
+            cityNamec1.setOpacity(0);
+            cityNamec1.setDisable(true);
+            cityCodec.setOpacity(0);
+            cityCodec.setDisable(true);
+            cityCodec1.setOpacity(0);
+            cityCodec1.setDisable(true);
+            cityDistc.setOpacity(0);
+            cityDistc.setDisable(true);
+            cityDistc1.setOpacity(0);
+            cityDistc1.setDisable(true);
+            cityPopuc.setOpacity(0);
+            cityPopuc.setDisable(true);
+            cityPopuc1.setOpacity(0);
+            cityPopuc1.setDisable(true);
+        }
+
+
+
+
+    }
+
+    @FXML
+    private void search(ActionEvent event){
+
+        String Code;
+        String Name;
+        String ID;
+        String Population;
+        String District;
+        String CountryCode;
+        int h = 0;
+
+        if(cityCodec1.getText() == null)
+        {
+            Code = null;
+        }else
+        {
+            Code = "CountryCode like '"+ cityCodec1.getText()+"'";
+            h++;
+        }
+
+        try {
+            Connection con = DriverManager.getConnection(
+                    "jdbc:mysql://localhost:3306/world", Login.user, Login.password);
+            Statement stmt = con.createStatement();
+            if(h != 0){
+                ResultSet rs = stmt.executeQuery("SELECT * FROM city WHERE "+Code);
+                while (rs.next()) {
+                    String  code = rs.getString("CountryCode");
+                    String name = rs.getString("Name");
+                    String district = rs.getString("District");
+                    String id = rs.getString("ID");
+                    String population = rs.getString("Population");
+                    System.out.println(code+" "+name+" "+district+" "+id+" "+population);
+                }
+            }
+            con.close();
+
+            System.out.println("ok");
+        }
+        catch (Exception e){
+            System.out.println(e);
+        }
     }
 }
 
