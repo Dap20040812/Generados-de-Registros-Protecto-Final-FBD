@@ -19,28 +19,51 @@
                 <Tab text="GlobalTab">
                     <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0">
-                     <children>
-                        <Text layoutX="474.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Generador de Registro">
-                           <font>
-                              <Font size="37.0" />
-                           </font>
-                        </Text>
-                        <CheckBox layoutX="82.0" layoutY="108.0" mnemonicParsing="false" text="City">
-                           <font>
-                              <Font size="29.0" />
-                           </font>
-                        </CheckBox>
-                        <CheckBox layoutX="82.0" layoutY="167.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="213.0" text="Country">
-                           <font>
-                              <Font size="29.0" />
-                           </font>
-                        </CheckBox>
-                        <CheckBox layoutX="82.0" layoutY="226.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="294.0" text="CountryLanguage">
-                           <font>
-                              <Font size="29.0" />
-                           </font>
-                        </CheckBox>
-                     </children></AnchorPane>
+                            <children>
+                                <Text layoutX="474.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Generador de Registro">
+                                    <font>
+                                        <Font size="37.0" />
+                                    </font>
+                                </Text>
+                                <CheckBox fx:id="cityCheck" layoutX="82.0" layoutY="108.0" mnemonicParsing="false" onAction="#checkCity" text="City">
+                                    <font>
+                                        <Font size="29.0" />
+                                    </font>
+                                </CheckBox>
+                                <CheckBox layoutX="82.0" layoutY="167.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="213.0" text="Country">
+                                    <font>
+                                        <Font size="29.0" />
+                                    </font>
+                                </CheckBox>
+                                <CheckBox fx:id="languageCheck" layoutX="82.0" layoutY="226.0" mnemonicParsing="false" onAction="#checkLanguage" prefHeight="52.0" prefWidth="294.0" text="CountryLanguage">
+                                    <font>
+                                        <Font size="29.0" />
+                                    </font>
+                                </CheckBox>
+                                <Label fx:id="cityIDc" layoutX="119.0" layoutY="333.0" text="ID :" />
+                                <TextField fx:id="cityIDc1" layoutX="141.0" layoutY="329.0" />
+                                <Label fx:id="cityNamec" layoutX="310.0" layoutY="333.0" prefHeight="17.0" prefWidth="52.0" text="Name :" />
+                                <TextField fx:id="cityNamec1" layoutX="362.0" layoutY="329.0" />
+                                <Label fx:id="cityCodec" layoutX="526.0" layoutY="333.0" prefHeight="17.0" prefWidth="82.0" text="CountryCode :" />
+                                <TextField fx:id="cityCodec1" layoutX="608.0" layoutY="329.0" />
+                                <Label fx:id="cityDistc" layoutX="768.0" layoutY="333.0" prefHeight="17.0" prefWidth="82.0" text="District :" />
+                                <TextField fx:id="cityDistc1" layoutX="818.0" layoutY="329.0" />
+                                <Label fx:id="cityPopuc" layoutX="986.0" layoutY="333.0" prefHeight="17.0" prefWidth="82.0" text="Population :" />
+                                <TextField fx:id="cityPopuc1" layoutX="1059.0" layoutY="329.0" />
+                                <Button layoutX="1134.0" layoutY="151.0" mnemonicParsing="false" onAction="#search" prefHeight="95.0" prefWidth="102.0" style="-fx-background-color: #2105BAED; -fx-border-color: black; -fx-border-radius: 50%; -fx-background-radius: 50%; -fx-border-width: 3;" text="🔎" textFill="WHITE">
+                                    <font>
+                                        <Font size="32.0" />
+                                    </font>
+                                </Button>
+                                <TextField fx:id="languageCountryCode1" layoutX="204.0" layoutY="561.0" />
+                                <Label fx:id="languageCountryCode2" layoutX="119.0" layoutY="565.0" prefHeight="17.0" prefWidth="85.0" text="CountryCode" />
+                                <Label fx:id="languageLanguage2" layoutX="362.0" layoutY="565.0" prefHeight="17.0" prefWidth="85.0" text="Language:" />
+                                <TextField fx:id="languageLanguage1" layoutX="418.0" layoutY="561.0" />
+                                <Label fx:id="languageIsOfficial2" layoutX="577.0" layoutY="565.0" prefHeight="17.0" prefWidth="82.0" text="IsOfficial:" />
+                                <TextField fx:id="languageIsOfficial1" layoutX="640.0" layoutY="561.0" />
+                                <Label fx:id="languagePercentage2" layoutX="802.0" layoutY="565.0" prefHeight="17.0" prefWidth="82.0" text="Percentage:" />
+                                <TextField fx:id="languagePercentage1" layoutX="878.0" layoutY="561.0" />
+                            </children></AnchorPane>
                     </content>
                 </Tab>
                 <Tab fx:id="myCityTab" text="CityTab">
