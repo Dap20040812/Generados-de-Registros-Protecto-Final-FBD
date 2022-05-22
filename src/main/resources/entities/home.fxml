@@ -20,85 +20,195 @@
                     <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0">
                             <children>
-                                <Text layoutX="474.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Generador de Registro">
-                                    <font>
-                                        <Font size="37.0" />
-                                    </font>
-                                </Text>
-                                <CheckBox fx:id="cityCheck" layoutX="82.0" layoutY="108.0" mnemonicParsing="false" onAction="#checkCity" text="City">
-                                    <font>
-                                        <Font size="29.0" />
-                                    </font>
-                                </CheckBox>
-                                <CheckBox layoutX="82.0" layoutY="167.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="213.0" text="Country">
-                                    <font>
-                                        <Font size="29.0" />
-                                    </font>
-                                </CheckBox>
-                                <CheckBox fx:id="languageCheck" layoutX="82.0" layoutY="226.0" mnemonicParsing="false" onAction="#checkLanguage" prefHeight="52.0" prefWidth="294.0" text="CountryLanguage">
-                                    <font>
-                                        <Font size="29.0" />
-                                    </font>
-                                </CheckBox>
-                                <TextField fx:id="cityIDc1" layoutX="141.0" layoutY="329.0" prefHeight="25.0" prefWidth="79.0" />
-                                <TextField fx:id="cityNamec1" layoutX="330.0" layoutY="331.0" />
-                                <TextField fx:id="cityCodec1" layoutX="647.0" layoutY="330.0" prefHeight="25.0" prefWidth="78.0" />
-                                <TextField fx:id="cityDistc1" layoutX="851.0" layoutY="332.0" />
-                                <TextField fx:id="cityPopuc1" layoutX="1148.0" layoutY="333.0" />
-                                <Button layoutX="1134.0" layoutY="151.0" mnemonicParsing="false" onAction="#search" prefHeight="95.0" prefWidth="102.0" style="-fx-background-color: #2105BAED; -fx-border-color: black; -fx-border-radius: 50%; -fx-background-radius: 50%; -fx-border-width: 3;" text="🔎" textFill="WHITE">
-                                    <font>
-                                        <Font size="32.0" />
-                                    </font>
-                                </Button>
-                                <TextField fx:id="languageCountryCode1" layoutX="247.0" layoutY="600.0" />
-                                <TextField fx:id="languageLanguage1" layoutX="566.0" layoutY="600.0" />
-                                <TextField fx:id="languageIsOfficial1" layoutX="851.0" layoutY="600.0" />
-                                <TextField fx:id="languagePercentage1" layoutX="1155.0" layoutY="601.0" />
-                                <CheckBox fx:id="cityIDc" layoutX="68.0" layoutY="327.0" mnemonicParsing="false" onAction="#checkCity" prefHeight="30.0" prefWidth="102.0" text="ID :">
-                                    <font>
-                                        <Font size="19.0" />
-                                    </font>
-                                </CheckBox>
-                                <CheckBox fx:id="cityNamec" layoutX="228.0" layoutY="328.0" mnemonicParsing="false" onAction="#checkCity" prefHeight="30.0" prefWidth="102.0" text="Name :">
-                                    <font>
-                                        <Font size="19.0" />
-                                    </font>
-                                </CheckBox>
-                                <CheckBox fx:id="cityCodec" layoutX="488.0" layoutY="327.0" mnemonicParsing="false" onAction="#checkCity" prefHeight="30.0" prefWidth="159.0" text="CountryCode :">
-                                    <font>
-                                        <Font size="19.0" />
-                                    </font>
-                                </CheckBox>
-                                <CheckBox fx:id="cityDistc" layoutX="736.0" layoutY="329.0" mnemonicParsing="false" onAction="#checkCity" prefHeight="30.0" prefWidth="159.0" text="Disctrcit :">
-                                    <font>
-                                        <Font size="19.0" />
-                                    </font>
-                                </CheckBox>
-                                <CheckBox fx:id="cityPopuc" layoutX="1008.0" layoutY="330.0" mnemonicParsing="false" onAction="#checkCity" prefHeight="30.0" prefWidth="159.0" text="Population :">
-                                    <font>
-                                        <Font size="19.0" />
-                                    </font>
-                                </CheckBox>
-                        <CheckBox fx:id="languageCountryCode2" layoutX="68.0" layoutY="599.0" mnemonicParsing="false" onAction="#checkLanguage" prefHeight="24.0" prefWidth="161.0" text="CountryCode:">
-                           <font>
-                              <Font size="19.0" />
-                           </font>
-                        </CheckBox>
-                        <CheckBox fx:id="languageLanguage2" layoutX="412.0" layoutY="599.0" mnemonicParsing="false" onAction="#checkLanguage" prefHeight="24.0" prefWidth="161.0" text="Language:">
-                           <font>
-                              <Font size="19.0" />
-                           </font>
-                        </CheckBox>
-                        <CheckBox fx:id="languageIsOfficial2" layoutX="735.0" layoutY="599.0" mnemonicParsing="false" onAction="#checkLanguage" prefHeight="24.0" prefWidth="161.0" text="IsOfficial:">
-                           <font>
-                              <Font size="19.0" />
-                           </font>
-                        </CheckBox>
-                        <CheckBox fx:id="languagePercentage2" layoutX="1015.0" layoutY="599.0" mnemonicParsing="false" onAction="#checkLanguage" prefHeight="24.0" prefWidth="161.0" text="Percentage:">
-                           <font>
-                              <Font size="19.0" />
-                           </font>
-                        </CheckBox>
+                                <TabPane prefHeight="778.0" prefWidth="1318.0" tabClosingPolicy="UNAVAILABLE">
+                                    <tabs>
+                                        <Tab text="Crear">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0">
+                                                    <children>
+                                                        <Text layoutX="474.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Generador de Registro">
+                                                            <font>
+                                                                <Font size="37.0" />
+                                                            </font>
+                                                        </Text>
+                                                        <CheckBox fx:id="cityCheck" layoutX="82.0" layoutY="108.0" mnemonicParsing="false" onAction="#checkCity" text="City">
+                                                            <font>
+                                                                <Font size="29.0" />
+                                                            </font>
+                                                        </CheckBox>
+                                                        <CheckBox fx:id="countryCheck" layoutX="82.0" layoutY="167.0" mnemonicParsing="false" onAction="#checkCountry" prefHeight="46.0" prefWidth="213.0" text="Country">
+                                                            <font>
+                                                                <Font size="29.0" />
+                                                            </font>
+                                                        </CheckBox>
+                                                        <CheckBox fx:id="languageCheck" layoutX="82.0" layoutY="226.0" mnemonicParsing="false" onAction="#checkLanguage" prefHeight="52.0" prefWidth="294.0" text="CountryLanguage">
+                                                            <font>
+                                                                <Font size="29.0" />
+                                                            </font>
+                                                        </CheckBox>
+                                                        <TextField fx:id="cityIDc1" layoutX="141.0" layoutY="329.0" prefHeight="25.0" prefWidth="79.0" />
+                                                        <TextField fx:id="cityNamec1" layoutX="330.0" layoutY="331.0" />
+                                                        <TextField fx:id="cityCodec1" layoutX="647.0" layoutY="330.0" prefHeight="25.0" prefWidth="78.0" />
+                                                        <TextField fx:id="cityDistc1" layoutX="851.0" layoutY="332.0" />
+                                                        <TextField fx:id="cityPopuc1" layoutX="1148.0" layoutY="333.0" />
+                                                        <Button layoutX="1134.0" layoutY="151.0" mnemonicParsing="false" onAction="#search" prefHeight="95.0" prefWidth="102.0" style="-fx-background-color: #2105BAED; -fx-border-color: black; -fx-border-radius: 50%; -fx-background-radius: 50%; -fx-border-width: 3;" text="🔎" textFill="WHITE">
+                                                            <font>
+                                                                <Font size="32.0" />
+                                                            </font>
+                                                        </Button>
+                                                        <TextField fx:id="languageCountryCode1" layoutX="247.0" layoutY="600.0" />
+                                                        <TextField fx:id="languageLanguage1" layoutX="566.0" layoutY="600.0" />
+                                                        <TextField fx:id="languageIsOfficial1" layoutX="851.0" layoutY="600.0" />
+                                                        <TextField fx:id="languagePercentage1" layoutX="1155.0" layoutY="601.0" />
+                                                        <CheckBox fx:id="cityIDc" layoutX="71.0" layoutY="327.0" mnemonicParsing="false" onAction="#checkCity" prefHeight="30.0" prefWidth="102.0" text="ID :">
+                                                            <font>
+                                                                <Font size="19.0" />
+                                                            </font>
+                                                        </CheckBox>
+                                                        <CheckBox fx:id="cityNamec" layoutX="228.0" layoutY="328.0" mnemonicParsing="false" onAction="#checkCity" prefHeight="30.0" prefWidth="102.0" text="Name :">
+                                                            <font>
+                                                                <Font size="19.0" />
+                                                            </font>
+                                                        </CheckBox>
+                                                        <CheckBox fx:id="cityCodec" layoutX="488.0" layoutY="327.0" mnemonicParsing="false" onAction="#checkCity" prefHeight="30.0" prefWidth="159.0" text="CountryCode :">
+                                                            <font>
+                                                                <Font size="19.0" />
+                                                            </font>
+                                                        </CheckBox>
+                                                        <CheckBox fx:id="cityDistc" layoutX="736.0" layoutY="329.0" mnemonicParsing="false" onAction="#checkCity" prefHeight="30.0" prefWidth="159.0" text="Disctrcit :">
+                                                            <font>
+                                                                <Font size="19.0" />
+                                                            </font>
+                                                        </CheckBox>
+                                                        <CheckBox fx:id="cityPopuc" layoutX="1008.0" layoutY="330.0" mnemonicParsing="false" onAction="#checkCity" prefHeight="30.0" prefWidth="159.0" text="Population :">
+                                                            <font>
+                                                                <Font size="19.0" />
+                                                            </font>
+                                                        </CheckBox>
+                                                        <CheckBox fx:id="languageCountryCode2" layoutX="70.0" layoutY="599.0" mnemonicParsing="false" onAction="#checkLanguage" prefHeight="24.0" prefWidth="161.0" text="CountryCode:">
+                                                            <font>
+                                                                <Font size="19.0" />
+                                                            </font>
+                                                        </CheckBox>
+                                                        <CheckBox fx:id="languageLanguage2" layoutX="412.0" layoutY="599.0" mnemonicParsing="false" onAction="#checkLanguage" prefHeight="24.0" prefWidth="161.0" text="Language :">
+                                                            <font>
+                                                                <Font size="19.0" />
+                                                            </font>
+                                                        </CheckBox>
+                                                        <CheckBox fx:id="languageIsOfficial2" layoutX="735.0" layoutY="599.0" mnemonicParsing="false" onAction="#checkLanguage" prefHeight="24.0" prefWidth="161.0" text="IsOfficial :">
+                                                            <font>
+                                                                <Font size="19.0" />
+                                                            </font>
+                                                        </CheckBox>
+                                                        <CheckBox fx:id="languagePercentage2" layoutX="1015.0" layoutY="599.0" mnemonicParsing="false" onAction="#checkLanguage" prefHeight="24.0" prefWidth="161.0" text="Percentage:">
+                                                            <font>
+                                                                <Font size="19.0" />
+                                                            </font>
+                                                        </CheckBox>
+                                                        <CheckBox fx:id="countryCodec" layoutX="71.0" layoutY="389.0" mnemonicParsing="false" onAction="#checkCountry" prefHeight="30.0" prefWidth="102.0" text="Code:">
+                                                            <font>
+                                                                <Font size="19.0" />
+                                                            </font>
+                                                        </CheckBox>
+                                                        <TextField fx:id="countryCode1" layoutX="159.0" layoutY="392.0" prefHeight="25.0" prefWidth="79.0" />
+                                                        <CheckBox fx:id="countryNamec" layoutX="247.0" layoutY="389.0" mnemonicParsing="false" onAction="#checkCountry" prefHeight="30.0" prefWidth="102.0" text="Name :">
+                                                            <font>
+                                                                <Font size="19.0" />
+                                                            </font>
+                                                        </CheckBox>
+                                                        <TextField fx:id="countryName1" layoutX="349.0" layoutY="392.0" />
+                                                        <CheckBox fx:id="countryContinentc" layoutX="509.0" layoutY="389.0" mnemonicParsing="false" onAction="#checkCountry" prefHeight="30.0" prefWidth="159.0" text="Continent :">
+                                                            <font>
+                                                                <Font size="19.0" />
+                                                            </font>
+                                                        </CheckBox>
+                                                        <TextField fx:id="countryContinent1" layoutX="668.0" layoutY="392.0" prefHeight="25.0" prefWidth="78.0" />
+                                                        <CheckBox fx:id="countryRegionc" layoutX="753.0" layoutY="390.0" mnemonicParsing="false" onAction="#checkCountry" prefHeight="30.0" prefWidth="159.0" text="Region :">
+                                                            <font>
+                                                                <Font size="19.0" />
+                                                            </font>
+                                                        </CheckBox>
+                                                        <TextField fx:id="countryRegion1" layoutX="862.0" layoutY="392.0" />
+                                                        <CheckBox fx:id="countrySurfaceAreac" layoutX="1019.0" layoutY="389.0" mnemonicParsing="false" onAction="#checkCountry" prefHeight="30.0" prefWidth="159.0" text="SurfaceArea :">
+                                                            <font>
+                                                                <Font size="19.0" />
+                                                            </font>
+                                                        </CheckBox>
+                                                        <TextField fx:id="countrySurfaceArea1" layoutX="1170.0" layoutY="392.0" prefHeight="22.0" prefWidth="132.0" />
+                                                        <CheckBox fx:id="countryIndepYearc" layoutX="70.0" layoutY="430.0" mnemonicParsing="false" onAction="#checkCountry" prefHeight="29.0" prefWidth="156.0" text="IndepYear :">
+                                                            <font>
+                                                                <Font size="19.0" />
+                                                            </font>
+                                                        </CheckBox>
+                                                        <TextField fx:id="countryIndepYear1" layoutX="199.0" layoutY="432.0" prefHeight="13.0" prefWidth="105.0" />
+                                                        <CheckBox fx:id="countryPopulationc" layoutX="316.0" layoutY="431.0" mnemonicParsing="false" onAction="#checkCountry" prefHeight="24.0" prefWidth="158.0" text="Population :">
+                                                            <font>
+                                                                <Font size="19.0" />
+                                                            </font>
+                                                        </CheckBox>
+                                                        <TextField fx:id="countryPopulation1" layoutX="456.0" layoutY="434.0" />
+                                                        <CheckBox fx:id="countryLifeExpectancyc" layoutX="613.0" layoutY="432.0" mnemonicParsing="false" onAction="#checkCountry" prefHeight="28.0" prefWidth="175.0" text="LifeExpectancy :">
+                                                            <font>
+                                                                <Font size="19.0" />
+                                                            </font>
+                                                        </CheckBox>
+                                                        <TextField fx:id="countryLifeExpectancy1" layoutX="782.0" layoutY="433.0" prefHeight="25.0" prefWidth="125.0" />
+                                                        <CheckBox fx:id="countryGNPc" layoutX="918.0" layoutY="429.0" mnemonicParsing="false" onAction="#checkCountry" prefHeight="30.0" prefWidth="106.0" text="GNP :">
+                                                            <font>
+                                                                <Font size="19.0" />
+                                                            </font>
+                                                        </CheckBox>
+                                                        <TextField fx:id="countryGNP1" layoutX="1006.0" layoutY="433.0" />
+                                                        <CheckBox fx:id="countryGNPOldc" layoutX="70.0" layoutY="471.0" mnemonicParsing="false" onAction="#checkCountry" prefHeight="21.0" prefWidth="126.0" text="GNPOld :">
+                                                            <font>
+                                                                <Font size="19.0" />
+                                                            </font>
+                                                        </CheckBox>
+                                                        <TextField fx:id="countryGNPOld1" layoutX="184.0" layoutY="475.0" prefHeight="25.0" prefWidth="110.0" />
+                                                        <CheckBox fx:id="countryLocalNamec" layoutX="303.0" layoutY="471.0" mnemonicParsing="false" onAction="#checkCountry" prefHeight="15.0" prefWidth="159.0" text="LocalName : ">
+                                                            <font>
+                                                                <Font size="19.0" />
+                                                            </font>
+                                                        </CheckBox>
+                                                        <TextField fx:id="countryLocalName1" layoutX="445.0" layoutY="474.0" prefHeight="25.0" prefWidth="173.0" />
+                                                        <CheckBox fx:id="countryGovernmentFormc" layoutX="635.0" layoutY="470.0" mnemonicParsing="false" onAction="#checkCountry" prefHeight="31.0" prefWidth="204.0" text="GovernmentForm :">
+                                                            <font>
+                                                                <Font size="19.0" />
+                                                            </font>
+                                                        </CheckBox>
+                                                        <TextField fx:id="countryGovernmentForm1" layoutX="831.0" layoutY="475.0" prefHeight="25.0" prefWidth="154.0" />
+                                                        <CheckBox fx:id="countryHeadOfStatec" layoutX="994.0" layoutY="473.0" mnemonicParsing="false" onAction="#checkCountry" prefHeight="30.0" prefWidth="159.0" text="HeadOfState:">
+                                                            <font>
+                                                                <Font size="19.0" />
+                                                            </font>
+                                                        </CheckBox>
+                                                        <TextField fx:id="countryHeadOfState1" layoutX="1145.0" layoutY="475.0" prefHeight="25.0" prefWidth="158.0" />
+                                                        <CheckBox fx:id="countryCapitalc" layoutX="71.0" layoutY="521.0" mnemonicParsing="false" onAction="#checkCountry" prefHeight="30.0" prefWidth="159.0" text="Capital :">
+                                                            <font>
+                                                                <Font size="19.0" />
+                                                            </font>
+                                                        </CheckBox>
+                                                        <TextField fx:id="countryCapital1" layoutX="174.0" layoutY="522.0" prefHeight="25.0" prefWidth="133.0" />
+                                                        <CheckBox fx:id="countryCode2c" layoutX="316.0" layoutY="520.0" mnemonicParsing="false" onAction="#checkCountry" prefHeight="30.0" prefWidth="159.0" text="Code2 :">
+                                                            <font>
+                                                                <Font size="19.0" />
+                                                            </font>
+                                                        </CheckBox>
+                                                        <TextField fx:id="countryCode21" layoutX="418.0" layoutY="523.0" />
+                                                    </children></AnchorPane>
+                                            </content>
+                                        </Tab>
+                                        <Tab text="Resultados">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                    <children>
+                                                        <TableView fx:id="myRegistrosTable" layoutX="7.0" layoutY="7.0" prefHeight="742.0" prefWidth="1311.0" />
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                    </tabs>
+                                </TabPane>
                             </children></AnchorPane>
                     </content>
                 </Tab>

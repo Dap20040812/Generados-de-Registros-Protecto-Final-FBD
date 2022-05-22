@@ -45,7 +45,7 @@ public class Home implements Initializable {
     @FXML public TextField cityPopuc1;
 
     //checkbox
-    @FXML public  CheckBox cityCheck;
+    @FXML public CheckBox cityCheck;
     @FXML public CheckBox cityIDc;
     @FXML public CheckBox cityCodec;
     @FXML public CheckBox cityNamec;
@@ -88,6 +88,40 @@ public class Home implements Initializable {
     @FXML public TextField countryHeadOfState;
     @FXML public TextField countryCapital;
     @FXML public TextField countryCode2;
+
+    @FXML public TextField countryCode1;
+    @FXML public TextField countryName1;
+    @FXML public TextField countryContinent1;
+    @FXML public TextField countryRegion1;
+    @FXML public TextField countrySurfaceArea1;
+    @FXML public TextField countryIndepYear1;
+    @FXML public TextField countryPopulation1;
+    @FXML public TextField countryLifeExpectancy1;
+    @FXML public TextField countryGNP1;
+    @FXML public TextField countryGNPOld1;
+    @FXML public TextField countryLocalName1;
+    @FXML public TextField countryGovernmentForm1;
+    @FXML public TextField countryHeadOfState1;
+    @FXML public TextField countryCapital1;
+    @FXML public TextField countryCode21;
+
+    //checkbox
+    @FXML public CheckBox countryCheck;
+    @FXML public CheckBox countryCodec;
+    @FXML public CheckBox countryNamec;
+    @FXML public CheckBox countryContinentc;
+    @FXML public CheckBox countryRegionc;
+    @FXML public CheckBox countrySurfaceAreac;
+    @FXML public CheckBox countryIndepYearc;
+    @FXML public CheckBox countryPopulationc;
+    @FXML public CheckBox countryLifeExpectancyc;
+    @FXML public CheckBox countryGNPc;
+    @FXML public CheckBox countryGNPOldc;
+    @FXML public CheckBox countryLocalNamec;
+    @FXML public CheckBox countryGovernmentFormc;
+    @FXML public CheckBox countryHeadOfStatec;
+    @FXML public CheckBox countryCapitalc;
+    @FXML public CheckBox countryCode2c;
 
     @FXML public Button update2;
     @FXML public Button ok2;
