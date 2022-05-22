@@ -4,20 +4,29 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import javafx.stage.Popup;
+import javafx.stage.Window;
 
 import javax.swing.*;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class Home implements Initializable {
-
 
     @FXML public Button update;
     @FXML public Button ok;
@@ -129,7 +138,7 @@ public class Home implements Initializable {
     private final ObservableList<Country> countries = FXCollections.observableArrayList();
     private final ObservableList<Language> languages = FXCollections.observableArrayList();
 
-
+    @FXML public TableView myRegistrosTable;
 
     public void GenerateCity() {
 
@@ -766,7 +775,7 @@ public class Home implements Initializable {
     }
 
     @FXML
-    private void search(ActionEvent event){
+    private void search(ActionEvent event) throws IOException {
 
         String Code;
         String Code1;
@@ -929,15 +938,17 @@ public class Home implements Initializable {
             con.close();
 
             System.out.println("ok");
+
         }
         catch (Exception e){
             System.out.println(e);
         }
-        cityNamec1.setText("");
-        cityPopuc1.setText("");
-        cityCodec1.setText("");
-        cityDistc1.setText("");
-        cityIDc1.setText("");
     }
+
+
+
+
+
+
 }
 
