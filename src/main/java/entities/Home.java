@@ -1400,11 +1400,11 @@ public class Home implements Initializable {
         {
             if(g > 0)
             {
-                Government1 = ",p.government";
+                Government1 = ",p.governmentform";
                 myRegistrosTable.getColumns().add(cGovernment);
                 g++;
             }else {
-                Government1 = "p.government";
+                Government1 = "p.governmentform";
                 myRegistrosTable.getColumns().add(cGovernment);
                 g++;
             }
@@ -1713,11 +1713,11 @@ public class Home implements Initializable {
             Government = "";
         }else if (h > 0)
         {
-            Government = "and p.government like '"+ countryGovernmentForm1.getText()+"'";
+            Government = "and p.governmentform like '"+ countryGovernmentForm1.getText()+"'";
             h++;
 
         }else{
-            Government = "p.government like '"+ countryGovernmentForm1.getText()+"'";
+            Government = "p.governmentform like '"+ countryGovernmentForm1.getText()+"'";
             h++;
         }
         if(countryHeadOfState1.getText().equals("")) {
@@ -1798,12 +1798,12 @@ public class Home implements Initializable {
             h++;
         }
         try {
-            System.out.println("SELECT "+Code1+Name1+ID1+District1+Population1+Codec1+Namec1+Continent1+Region1+Surface1+IndepYear1+Population+Life1+GNP1+GNPOld1+Local1+Government1+State1+Capital1+Code21+Codel1+Language1+IsOfficial1+Percentage1+" FROM "+table1+table2+table3+" WHERE "+union+" "+Code+" "+Name+" "+ID+" "+District+" "+Population+" "+Codec+" "+Namec+" "+Continent+" "+Region+" "+Surface+" "+IndepYear+" "+Popu+" "+Life+" "+GNP+" "+GNPOld+" "+Local+" "+Government+" "+State+" "+Capital+" "+Code2+" "+Codel+" "+Language+" "+IsOfficial+" "+Percentage);
             Connection con = DriverManager.getConnection(
                     "jdbc:mysql://localhost:3306/world", Login.user, Login.password);
             Statement stmt = con.createStatement();
             if(h > 0){
-                ResultSet rs = stmt.executeQuery("SELECT "+Code1+Name1+ID1+District1+Population1+Codec1+Namec1+Continent1+Region1+Surface1+IndepYear1+Population+Life1+GNP1+GNPOld1+Local1+Government1+State1+Capital1+Code21+Codel1+Language1+IsOfficial1+Percentage1+" FROM "+table1+table2+table3+" WHERE "+union+" "+Code+" "+Name+" "+ID+" "+District+" "+Population+" "+Codec+" "+Namec+" "+Continent+" "+Region+" "+Surface+" "+IndepYear+" "+Popu+" "+Life+" "+GNP+" "+GNPOld+" "+Local+" "+Government+" "+State+" "+Capital+" "+Code2+" "+Codel+" "+Language+" "+IsOfficial+" "+Percentage);
+                    String sql = "SELECT "+ Code1 + Name1 + ID1 + District1 + Population1 + Codec1 + Namec1 + Continent1 + Region1 + Surface1 + IndepYear1 + Population + Life1 + GNP1 + GNPOld1 + Local1 + Government1 + State1 + Capital1 + Code21 + Codel1 + Language1 + IsOfficial1 + Percentage1 + " FROM " + table1 + table2 + table3 + " WHERE " + union + " " + Code + " " + Name + " " + ID + " " + District + " " + Population + " " + Codec + " " + Namec + " " + Continent + " " + Region + " " + Surface + " " + IndepYear + " " + Popu + " " + Life + " " + GNP + " " + GNPOld + " " + Local + " " + Government + " " + State + " " + Capital + " " + Code2 + " " + Codel + " " + Language + " " + IsOfficial + " " + Percentage + "order by 1";
+                ResultSet rs = stmt.executeQuery(sql);
                 while (rs.next()) {
                     String  code;
                     String name;
@@ -1897,12 +1897,12 @@ public class Home implements Initializable {
                     else life = "";
                     if(countryGNPc.isSelected()){
                         gnp = rs.getString("GNP");
-                        cGNP.setCellValueFactory(new PropertyValueFactory<>("GNP"));
+                        cGNP.setCellValueFactory(new PropertyValueFactory<>("Gnp"));
                     }
                     else gnp = "";
                     if(countryGNPOldc.isSelected()){
                         gnpold = rs.getString("GNPOld");
-                        cGNPOld.setCellValueFactory(new PropertyValueFactory<>("GNPOld"));
+                        cGNPOld.setCellValueFactory(new PropertyValueFactory<>("GnpOld"));
                     }
                     else gnpold = "";
                     if(countryLocalNamec.isSelected()){

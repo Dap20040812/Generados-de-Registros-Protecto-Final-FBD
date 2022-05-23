@@ -225,17 +225,12 @@
                                         <TableColumn fx:id="myCityPopu" prefWidth="164.0" text="Population" />
                                     </columns>
                                 </TableView>
-                                <Button layoutX="623.0" layoutY="455.0" mnemonicParsing="false" prefHeight="95.0" prefWidth="102.0" style="-fx-background-color: #2105BAED; -fx-border-color: black; -fx-border-radius: 50%; -fx-background-radius: 50%; -fx-border-width: 3;" text="🔎" textFill="WHITE">
-                                    <font>
-                                        <Font size="32.0" />
-                                    </font>
-                                </Button>
-                                <Button layoutX="1059.0" layoutY="457.0" mnemonicParsing="false" onAction="#deleteCity" prefHeight="87.0" prefWidth="96.0" style="-fx-background-color: #BA0000ED; -fx-border-color: black; -fx-border-radius: 50%; -fx-background-radius: 50%; -fx-border-width: 3;" text="🗑" textFill="WHITE">
+                                <Button layoutX="731.0" layoutY="455.0" mnemonicParsing="false" onAction="#deleteCity" prefHeight="87.0" prefWidth="96.0" style="-fx-background-color: #BA0000ED; -fx-border-color: black; -fx-border-radius: 50%; -fx-background-radius: 50%; -fx-border-width: 3;" text="🗑" textFill="WHITE">
                                     <font>
                                         <Font size="42.0" />
                                     </font>
                                 </Button>
-                                <Button layoutX="747.0" layoutY="454.0" mnemonicParsing="false" onAction="#añadirCity" prefHeight="95.0" prefWidth="102.0" style="-fx-background-color: #35A150ED; -fx-border-color: black; -fx-border-radius: 50%; -fx-background-radius: 50%; -fx-border-width: 3;" text="+" textFill="WHITE">
+                                <Button layoutX="623.0" layoutY="454.0" mnemonicParsing="false" onAction="#añadirCity" prefHeight="95.0" prefWidth="102.0" style="-fx-background-color: #35A150ED; -fx-border-color: black; -fx-border-radius: 50%; -fx-background-radius: 50%; -fx-border-width: 3;" text="+" textFill="WHITE">
                                     <font>
                                         <Font size="43.0" />
                                     </font>
@@ -306,11 +301,6 @@
                                         <TableColumn fx:id="myCountryCode2" prefWidth="62.0" text="Code2" />
                                     </columns>
                                 </TableView>
-                                <Button layoutX="1069.0" layoutY="595.0" mnemonicParsing="false" prefHeight="95.0" prefWidth="102.0" style="-fx-background-color: #2105BAED; -fx-border-color: black; -fx-border-radius: 50%; -fx-background-radius: 50%; -fx-border-width: 3;" text="🔎" textFill="WHITE">
-                                    <font>
-                                        <Font size="32.0" />
-                                    </font>
-                                </Button>
                                 <Button layoutX="1072.0" layoutY="415.0" mnemonicParsing="false" onAction="#deleteCountry" prefHeight="87.0" prefWidth="96.0" style="-fx-background-color: #BA0000ED; -fx-border-color: black; -fx-border-radius: 50%; -fx-background-radius: 50%; -fx-border-width: 3;" text="🗑" textFill="WHITE">
                                     <font>
                                         <Font size="42.0" />
@@ -436,11 +426,6 @@
                                         <TableColumn fx:id="myLanguagePercentage" minWidth="0.0" prefWidth="161.0" text="Percentage" />
                                     </columns>
                                 </TableView>
-                                <Button layoutX="947.0" layoutY="319.0" mnemonicParsing="false" prefHeight="95.0" prefWidth="102.0" style="-fx-background-color: #2105BAED; -fx-border-color: black; -fx-border-radius: 50%; -fx-background-radius: 50%; -fx-border-width: 3;" text="🔎" textFill="WHITE">
-                                    <font>
-                                        <Font size="32.0" />
-                                    </font>
-                                </Button>
                                 <Button layoutX="724.0" layoutY="318.0" mnemonicParsing="false" onAction="#deleteLanguage" prefHeight="87.0" prefWidth="96.0" style="-fx-background-color: #BA0000ED; -fx-border-color: black; -fx-border-radius: 50%; -fx-background-radius: 50%; -fx-border-width: 3;" text="🗑" textFill="WHITE">
                                     <font>
                                         <Font size="42.0" />
