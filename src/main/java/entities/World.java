@@ -29,6 +29,33 @@ public class World {
     SimpleStringProperty IsOfficial;
     SimpleStringProperty Percentage;
 
+    /**
+     * World Class constructor
+     * @param id
+     * @param cityName
+     * @param countryCode
+     * @param district
+     * @param cityPopulation
+     * @param code
+     * @param name
+     * @param continent
+     * @param region
+     * @param surfaceArea
+     * @param indepYear
+     * @param population
+     * @param lifeExpectancy
+     * @param GNP
+     * @param GNPOld
+     * @param localName
+     * @param governmentForm
+     * @param headOfState
+     * @param capital
+     * @param code2
+     * @param countryCodeL
+     * @param language
+     * @param isOfficial
+     * @param percentage
+     */
     public World(String id, String cityName, String countryCode, String district, String cityPopulation, String code, String name, String continent, String region, String surfaceArea, String indepYear, String population, String lifeExpectancy, String GNP, String GNPOld, String localName, String governmentForm, String headOfState, String capital, String code2, String countryCodeL, String language, String isOfficial, String percentage) {
         this.Id = new SimpleStringProperty(id);
         this.CityName = new SimpleStringProperty(cityName);

@@ -9,6 +9,13 @@ public class Language {
     SimpleStringProperty IsOfficial;
     SimpleStringProperty Percentage;
 
+    /**
+     * Language class constructor
+     * @param countryCode
+     * @param language
+     * @param isOfficial
+     * @param percentage
+     */
     public Language(String countryCode, String language, String isOfficial, String percentage) {
         CountryCode = new SimpleStringProperty(countryCode);
         Language = new SimpleStringProperty(language);

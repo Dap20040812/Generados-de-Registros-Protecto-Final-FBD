@@ -30,6 +30,11 @@ public class Login {
     public static String user;
     public static String password;
 
+    /**
+     * Change de scene to home page
+     * @param event
+     * @throws IOException
+     */
     public void switchToHome(ActionEvent event) throws IOException {
         user = myUserField.getText();
         password = myPasswordText.getText();
@@ -46,6 +51,11 @@ public class Login {
         }
     }
 
+    /**
+     * Verify the user of MySQL
+     * @param user
+     * @param password
+     */
     public void connect(String user, String password){
         try
         {

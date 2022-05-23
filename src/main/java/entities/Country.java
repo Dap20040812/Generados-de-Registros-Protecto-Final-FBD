@@ -1,3 +1,6 @@
+/**
+ * @author : DAP - PAU - JAVS
+ */
 package entities;
 
 import javafx.beans.property.SimpleStringProperty;
@@ -20,6 +23,24 @@ public class Country {
     SimpleStringProperty Capital;
     SimpleStringProperty Code2;
 
+    /**
+     * Country class constructor
+     * @param code
+     * @param name
+     * @param continent
+     * @param region
+     * @param surfaceArea
+     * @param indepYear
+     * @param population
+     * @param lifeExpectancy
+     * @param GNP
+     * @param GNPOld
+     * @param localName
+     * @param governmentForm
+     * @param headOfState
+     * @param capital
+     * @param code2
+     */
     public Country(String code, String name, String continent, String region, String surfaceArea, String indepYear, String population, String lifeExpectancy, String GNP, String GNPOld, String localName, String governmentForm, String headOfState, String capital, String code2) {
         Code = new SimpleStringProperty(code);
         Name = new SimpleStringProperty(name);

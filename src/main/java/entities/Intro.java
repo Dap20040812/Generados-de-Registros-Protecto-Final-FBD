@@ -10,7 +10,11 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class Intro extends Application {
-
+    /**
+     * Set de initial stage
+     * @param stage
+     * @throws IOException
+     */
     public void start(Stage stage) throws IOException {
         try {
             Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Intro.fxml")));

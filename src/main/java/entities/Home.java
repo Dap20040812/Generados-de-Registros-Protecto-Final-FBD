@@ -17,16 +17,25 @@ import javafx.stage.Stage;
 import javafx.stage.Popup;
 import javafx.stage.Window;
 import javafx.util.Callback;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.util.Configurator;
+
 
 import javax.swing.*;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.Objects;
 import java.util.ResourceBundle;
+import java.util.logging.LogManager;
 
 public class Home implements Initializable {
 
@@ -174,13 +183,19 @@ public class Home implements Initializable {
     @FXML public Tab tabR;
     @FXML public TabPane tabG;
 
+    public LocalDate hoy = LocalDate.now();
+    public LocalDateTime Today = LocalDateTime.now();
+
 
     private final ObservableList<City> cities = FXCollections.observableArrayList();
     private final ObservableList<Country> countries = FXCollections.observableArrayList();
     private final ObservableList<Language> languages = FXCollections.observableArrayList();
 
-    @FXML public TableView myRegistrosTable;
+    @FXML public TableView<World> myRegistrosTable;
 
+    /**
+     * Generate de city table
+     */
     public void GenerateCity() {
 
         try {
@@ -205,6 +220,9 @@ public class Home implements Initializable {
         }
     }
 
+    /**
+     * Generate de Language table
+     */
     public void GenerateLanguage() {
 
         try {
@@ -226,7 +244,9 @@ public class Home implements Initializable {
             System.out.println(e);
         }
     }
-
+    /**
+     * Generate de country table
+     */
     public void GenerateCountry() {
 
         try {
@@ -260,6 +280,11 @@ public class Home implements Initializable {
         }
     }
 
+    /**
+     * Initialize the scene and tables
+     * @param url
+     * @param resourceBundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -407,6 +432,10 @@ public class Home implements Initializable {
 
     }
 
+    /**
+     * Add a city to de database
+     * @param event
+     */
     @FXML
     private void añadirCity(ActionEvent event){
         City city = new City("","","","","");
@@ -437,6 +466,10 @@ public class Home implements Initializable {
         cityPopulation.setText("");
     }
 
+    /**
+     * delete a city from database
+     * @param event
+     */
     @FXML
     private void deleteCity(ActionEvent event){
         final City c = myCityTable.getSelectionModel().getSelectedItems().get(0);
@@ -457,6 +490,10 @@ public class Home implements Initializable {
 
     }
 
+    /**
+     * Select the current data and put into the text fields
+     * @param event
+     */
     @FXML
     private void updateCity(ActionEvent event){
         final City c = myCityTable.getSelectionModel().getSelectedItems().get(0);
@@ -470,6 +507,11 @@ public class Home implements Initializable {
         ok.setOpacity(1);
         update.setOpacity(0);
     }
+
+    /**
+     * update city attributes in the database
+     * @param event
+     */
     @FXML
     private void updateCity1(ActionEvent event){
 
@@ -513,7 +555,10 @@ public class Home implements Initializable {
     }
 
 
-
+    /**
+     * add a Language to the database
+     * @param event
+     */
     @FXML
     private void añadirLanguage(ActionEvent event){
         Language language = new Language("","","","");
@@ -542,6 +587,10 @@ public class Home implements Initializable {
         languagePercentage.setText("");
     }
 
+    /**
+     * delete a language to the database
+     * @param event
+     */
     @FXML
     private void deleteLanguage(ActionEvent event){
         final Language l = myLanguageTable.getSelectionModel().getSelectedItems().get(0);
@@ -562,6 +611,10 @@ public class Home implements Initializable {
 
     }
 
+    /**
+     * Select the current data and put into the text fields
+     * @param event
+     */
     @FXML
     private void updateLanguage(ActionEvent event){
         final Language l = myLanguageTable.getSelectionModel().getSelectedItems().get(0);
@@ -574,6 +627,11 @@ public class Home implements Initializable {
         ok1.setOpacity(1);
         update1.setOpacity(0);
     }
+
+    /**
+     * update language attributes in the database
+     * @param event
+     */
     @FXML
     private void updateLanguage1(ActionEvent event){
 
@@ -615,6 +673,10 @@ public class Home implements Initializable {
 
     // Country
 
+    /**
+     * add country to the database
+     * @param event
+     */
     @FXML
     private void añadirCountry(ActionEvent event){
         Country country = new Country("","","","","","","","","","","","","","","");
@@ -666,6 +728,10 @@ public class Home implements Initializable {
 
     }
 
+    /**
+     * delete country to the database
+     * @param event
+     */
     @FXML
     private void deleteCountry(ActionEvent event){
         final Country co = myCountryTable.getSelectionModel().getSelectedItems().get(0);
@@ -686,6 +752,10 @@ public class Home implements Initializable {
 
     }
 
+    /**
+     * Select the current data and put into the text fieldsv
+     * @param event
+     */
     @FXML
     private void updateCountry(ActionEvent event){
         final Country co = myCountryTable.getSelectionModel().getSelectedItems().get(0);
@@ -710,6 +780,11 @@ public class Home implements Initializable {
         ok2.setOpacity(1);
         update2.setOpacity(0);
     }
+
+    /**
+     * update country attributes in the database
+     * @param event
+     */
     @FXML
     private void updateCountry1(ActionEvent event){
 
@@ -782,6 +857,10 @@ public class Home implements Initializable {
         update2.setOpacity(1);
     }
 
+    /**
+     * Verify is table is selected add set its visibility
+     * @param event
+     */
     @FXML
     private void checkCity(ActionEvent event){
 
@@ -829,11 +908,11 @@ public class Home implements Initializable {
             cityPopuc1.setOpacity(0);
             cityPopuc1.setDisable(true);
         }
-
-
-
-
     }
+    /**
+     * Verify is table is selected add set its visibility
+     * @param event
+     */
     @FXML
     private void checkLanguage(ActionEvent event) {
 
@@ -876,7 +955,10 @@ public class Home implements Initializable {
 
         }
     }
-
+    /**
+     * Verify is table is selected add set its visibility
+     * @param event
+     */
     @FXML
     private void checkCountry(ActionEvent event) {
 
@@ -1005,9 +1087,13 @@ public class Home implements Initializable {
             countryCode2c.setOpacity(0);
             countryCode2c.setDisable(true);
         }
-
     }
 
+    /**
+     * Genereta a personalized query depending of the parameters that the user select and set de results table
+     * @param event
+     * @throws IOException
+     */
     @FXML
     private void search(ActionEvent event) throws IOException {
 
@@ -1802,7 +1888,7 @@ public class Home implements Initializable {
                     "jdbc:mysql://localhost:3306/world", Login.user, Login.password);
             Statement stmt = con.createStatement();
             if(h > 0){
-                    String sql = "SELECT "+ Code1 + Name1 + ID1 + District1 + Population1 + Codec1 + Namec1 + Continent1 + Region1 + Surface1 + IndepYear1 + Population + Life1 + GNP1 + GNPOld1 + Local1 + Government1 + State1 + Capital1 + Code21 + Codel1 + Language1 + IsOfficial1 + Percentage1 + " FROM " + table1 + table2 + table3 + " WHERE " + union + " " + Code + " " + Name + " " + ID + " " + District + " " + Population + " " + Codec + " " + Namec + " " + Continent + " " + Region + " " + Surface + " " + IndepYear + " " + Popu + " " + Life + " " + GNP + " " + GNPOld + " " + Local + " " + Government + " " + State + " " + Capital + " " + Code2 + " " + Codel + " " + Language + " " + IsOfficial + " " + Percentage + "order by 1";
+                    String sql = "SELECT "+ Code1 + Name1 + ID1 + District1 + Population1 + Codec1 + Namec1 + Continent1 + Region1 + Surface1 + IndepYear1 + Popu1 + Life1 + GNP1 + GNPOld1 + Local1 + Government1 + State1 + Capital1 + Code21 + Codel1 + Language1 + IsOfficial1 + Percentage1 + " FROM " + table1 + table2 + table3 + " WHERE " + union + " " + Code + " " + Name + " " + ID + " " + District + " " + Population + " " + Codec + " " + Namec + " " + Continent + " " + Region + " " + Surface + " " + IndepYear + " " + Popu + " " + Life + " " + GNP + " " + GNPOld + " " + Local + " " + Government + " " + State + " " + Capital + " " + Code2 + " " + Codel + " " + Language + " " + IsOfficial + " " + Percentage + "order by 1";
                 ResultSet rs = stmt.executeQuery(sql);
                 while (rs.next()) {
                     String  code;
@@ -2011,5 +2097,39 @@ public class Home implements Initializable {
         languagePercentage1.setText("");
         myRegistrosTable.setItems(data);
     }
+
+    /**
+     * Export de data on the registros table to a excel file
+     * @param event
+     * @throws IOException
+     */
+    @FXML
+    private void export(ActionEvent event) throws IOException {
+        Workbook workbook = new HSSFWorkbook();
+        Sheet spreadsheet = workbook.createSheet("sample");
+
+        Row row = spreadsheet.createRow(0);
+
+        for (int j = 0; j < myRegistrosTable.getColumns().size(); j++) {
+            row.createCell(j).setCellValue(myRegistrosTable.getColumns().get(j).getText());
+        }
+
+        for (int i = 0; i < myRegistrosTable.getItems().size(); i++) {
+            row = spreadsheet.createRow(i + 1);
+            for (int j = 0; j < myRegistrosTable.getColumns().size(); j++) {
+                if(myRegistrosTable.getColumns().get(j).getCellData(i) != null) {
+                    row.createCell(j).setCellValue(myRegistrosTable.getColumns().get(j).getCellData(i).toString());
+                }
+                else {
+                    row.createCell(j).setCellValue("");
+                }
+            }
+        }
+
+        FileOutputStream fileOut = new FileOutputStream("Report"+hoy+"-"+Today.getHour()+"-"+Today.getMinute()+"-"+Today.getSecond()+".xls");
+        workbook.write(fileOut);
+        fileOut.close();
+    }
+
 }
 

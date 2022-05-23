@@ -11,6 +11,7 @@ module entities {
     requires eu.hansolo.tilesfx;
     requires java.sql;
     requires java.desktop;
+    requires org.apache.poi.poi;
 
     opens entities to javafx.fxml;
     exports entities;
