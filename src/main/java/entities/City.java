@@ -6,8 +6,8 @@ import javafx.beans.property.SimpleStringProperty;
 import java.util.logging.SimpleFormatter;
 
 public class City {
-    SimpleStringProperty Id = new SimpleStringProperty();
-    SimpleStringProperty Name = new SimpleStringProperty();
+    SimpleStringProperty Id;
+    SimpleStringProperty Name;
     SimpleStringProperty CountryCode;
     SimpleStringProperty District;
     SimpleStringProperty Population;

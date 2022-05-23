@@ -1,5 +1,6 @@
 package entities;
 
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -15,6 +16,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.Popup;
 import javafx.stage.Window;
+import javafx.util.Callback;
 
 import javax.swing.*;
 import java.io.IOException;
@@ -98,6 +100,41 @@ public class Home implements Initializable {
     @FXML public TextField countryCapital;
     @FXML public TextField countryCode2;
 
+    @FXML public TextField countryCode1;
+    @FXML public TextField countryName1;
+    @FXML public TextField countryContinent1;
+    @FXML public TextField countryRegion1;
+    @FXML public TextField countrySurfaceArea1;
+    @FXML public TextField countryIndepYear1;
+    @FXML public TextField countryPopulation1;
+    @FXML public TextField countryLifeExpectancy1;
+    @FXML public TextField countryGNP1;
+    @FXML public TextField countryGNPOld1;
+    @FXML public TextField countryLocalName1;
+    @FXML public TextField countryGovernmentForm1;
+    @FXML public TextField countryHeadOfState1;
+    @FXML public TextField countryCapital1;
+    @FXML public TextField countryCode21;
+
+    //checkbox
+    @FXML public CheckBox countryCheck;
+    @FXML public CheckBox countryCodec;
+    @FXML public CheckBox countryNamec;
+    @FXML public CheckBox countryContinentc;
+    @FXML public CheckBox countryRegionc;
+    @FXML public CheckBox countrySurfaceAreac;
+    @FXML public CheckBox countryIndepYearc;
+    @FXML public CheckBox countryPopulationc;
+    @FXML public CheckBox countryLifeExpectancyc;
+    @FXML public CheckBox countryGNPc;
+    @FXML public CheckBox countryGNPOldc;
+    @FXML public CheckBox countryLocalNamec;
+    @FXML public CheckBox countryGovernmentFormc;
+    @FXML public CheckBox countryHeadOfStatec;
+    @FXML public CheckBox countryCapitalc;
+    @FXML public CheckBox countryCode2c;
+
+
     @FXML public Button update2;
     @FXML public Button ok2;
 
@@ -122,17 +159,21 @@ public class Home implements Initializable {
     @FXML public TextField languageIsOfficial1;
     @FXML public TextField languagePercentage1;
 
-    //labels
-
-    @FXML public Label languagePercentage2;
-    @FXML public Label languageCountryCode2;
-    @FXML public Label languageLanguage2;
-    @FXML public Label languageIsOfficial2;
+    //checkbox
+    @FXML public CheckBox languageCheck;
+    @FXML public CheckBox languagePercentage2;
+    @FXML public CheckBox languageCountryCode2;
+    @FXML public CheckBox languageLanguage2;
+    @FXML public CheckBox languageIsOfficial2;
 
     @FXML public Button update1;
     @FXML public Button ok1;
 
-    @FXML public  CheckBox languageCheck;
+
+
+    @FXML public Tab tabR;
+    @FXML public TabPane tabG;
+
 
     private final ObservableList<City> cities = FXCollections.observableArrayList();
     private final ObservableList<Country> countries = FXCollections.observableArrayList();
@@ -258,23 +299,6 @@ public class Home implements Initializable {
         myCityPopu.setCellValueFactory(new PropertyValueFactory<>("Population"));
         myCityTable.setItems(cities);
 
-        languageCountryCode2.setOpacity(0);
-        languageCountryCode2.setDisable(true);
-        languageCountryCode1.setOpacity(0);
-        languageCountryCode1.setDisable(true);
-        languageLanguage2.setOpacity(0);
-        languageLanguage2.setDisable(true);
-        languageLanguage1.setOpacity(0);
-        languageLanguage1.setDisable(true);
-        languageIsOfficial2.setOpacity(0);
-        languageIsOfficial2.setDisable(true);
-        languageIsOfficial1.setOpacity(0);
-        languageIsOfficial1.setDisable(true);
-        languagePercentage2.setOpacity(0);
-        languagePercentage2.setDisable(true);
-        languagePercentage1.setOpacity(0);
-        languagePercentage1.setDisable(true);
-
         myCountryCode.setCellValueFactory(new PropertyValueFactory<>("Code"));
         myCountryName.setCellValueFactory(new PropertyValueFactory<>("Name"));
         myCountryContinent.setCellValueFactory(new PropertyValueFactory<>("Continent"));
@@ -291,6 +315,68 @@ public class Home implements Initializable {
         myCountryCapital.setCellValueFactory(new PropertyValueFactory<>("Capital"));
         myCountryCode2.setCellValueFactory(new PropertyValueFactory<>("Code2"));
         myCountryTable.setItems(countries);
+        countryCode1.setOpacity(0);
+        countryCode1.setDisable(true);
+        countryCodec.setOpacity(0);
+        countryCodec.setDisable(true);
+        countryName1.setOpacity(0);
+        countryName1.setDisable(true);
+        countryNamec.setOpacity(0);
+        countryNamec.setDisable(true);
+        countryContinent1.setOpacity(0);
+        countryContinent1.setDisable(true);
+        countryContinentc.setOpacity(0);
+        countryContinentc.setDisable(true);
+        countryRegion1.setOpacity(0);
+        countryRegion1.setDisable(true);
+        countryRegionc.setOpacity(0);
+        countryRegionc.setDisable(true);
+        countrySurfaceArea1.setOpacity(0);
+        countrySurfaceArea1.setDisable(true);
+        countrySurfaceAreac.setOpacity(0);
+        countrySurfaceAreac.setDisable(true);
+        countryIndepYear1.setOpacity(0);
+        countryIndepYear1.setDisable(true);
+        countryIndepYearc.setOpacity(0);
+        countryIndepYearc.setDisable(true);
+        countryPopulation1.setOpacity(0);
+        countryPopulation1.setDisable(true);
+        countryPopulationc.setOpacity(0);
+        countryPopulationc.setDisable(true);
+        countryLifeExpectancy1.setOpacity(0);
+        countryLifeExpectancy1.setDisable(true);
+        countryLifeExpectancyc.setOpacity(0);
+        countryLifeExpectancyc.setDisable(true);
+        countryGNP1.setOpacity(0);
+        countryGNP1.setDisable(true);
+        countryGNPc.setOpacity(0);
+        countryGNPc.setDisable(true);
+        countryGNPOld1.setOpacity(0);
+        countryGNPOld1.setDisable(true);
+        countryGNPOldc.setOpacity(0);
+        countryGNPOldc.setDisable(true);
+        countryLocalName1.setOpacity(0);
+        countryLocalName1.setDisable(true);
+        countryLocalNamec.setOpacity(0);
+        countryLocalNamec.setDisable(true);
+        countryGovernmentForm1.setOpacity(0);
+        countryGovernmentForm1.setDisable(true);
+        countryGovernmentFormc.setOpacity(0);
+        countryGovernmentFormc.setDisable(true);
+        countryHeadOfState1.setOpacity(0);
+        countryHeadOfState1.setDisable(true);
+        countryHeadOfStatec.setOpacity(0);
+        countryHeadOfStatec.setDisable(true);
+        countryCapital1.setOpacity(0);
+        countryCapital1.setDisable(true);
+        countryCapitalc.setOpacity(0);
+        countryCapitalc.setDisable(true);
+        countryCode21.setOpacity(0);
+        countryCode21.setDisable(true);
+        countryCode2c.setOpacity(0);
+        countryCode2c.setDisable(true);
+
+
 
 
         myLanguageCode.setCellValueFactory(new PropertyValueFactory<>("CountryCode"));
@@ -298,6 +384,23 @@ public class Home implements Initializable {
         myLanguageOfficial.setCellValueFactory(new PropertyValueFactory<>("IsOfficial"));
         myLanguagePercentage.setCellValueFactory(new PropertyValueFactory<>("Percentage"));
         myLanguageTable.setItems(languages);
+
+        languageCountryCode2.setOpacity(0);
+        languageCountryCode2.setDisable(true);
+        languageCountryCode1.setOpacity(0);
+        languageCountryCode1.setDisable(true);
+        languageLanguage2.setOpacity(0);
+        languageLanguage2.setDisable(true);
+        languageLanguage1.setOpacity(0);
+        languageLanguage1.setDisable(true);
+        languageIsOfficial2.setOpacity(0);
+        languageIsOfficial2.setDisable(true);
+        languageIsOfficial1.setOpacity(0);
+        languageIsOfficial1.setDisable(true);
+        languagePercentage2.setOpacity(0);
+        languagePercentage2.setDisable(true);
+        languagePercentage1.setOpacity(0);
+        languagePercentage1.setDisable(true);
 
 
 
@@ -775,6 +878,137 @@ public class Home implements Initializable {
     }
 
     @FXML
+    private void checkCountry(ActionEvent event) {
+
+        if(countryCheck.isSelected())
+        {
+            countryCode1.setOpacity(1);
+            countryCode1.setDisable(false);
+            countryCodec.setOpacity(1);
+            countryCodec.setDisable(false);
+            countryName1.setOpacity(1);
+            countryName1.setDisable(false);
+            countryNamec.setOpacity(1);
+            countryNamec.setDisable(false);
+            countryContinent1.setOpacity(1);
+            countryContinent1.setDisable(false);
+            countryContinentc.setOpacity(1);
+            countryContinentc.setDisable(false);
+            countryRegion1.setOpacity(1);
+            countryRegion1.setDisable(false);
+            countryRegionc.setOpacity(1);
+            countryRegionc.setDisable(false);
+            countrySurfaceArea1.setOpacity(1);
+            countrySurfaceArea1.setDisable(false);
+            countrySurfaceAreac.setOpacity(1);
+            countrySurfaceAreac.setDisable(false);
+            countryIndepYear1.setOpacity(1);
+            countryIndepYear1.setDisable(false);
+            countryIndepYearc.setOpacity(1);
+            countryIndepYearc.setDisable(false);
+            countryPopulation1.setOpacity(1);
+            countryPopulation1.setDisable(false);
+            countryPopulationc.setOpacity(1);
+            countryPopulationc.setDisable(false);
+            countryLifeExpectancy1.setOpacity(1);
+            countryLifeExpectancy1.setDisable(false);
+            countryLifeExpectancyc.setOpacity(1);
+            countryLifeExpectancyc.setDisable(false);
+            countryGNP1.setOpacity(1);
+            countryGNP1.setDisable(false);
+            countryGNPc.setOpacity(1);
+            countryGNPc.setDisable(false);
+            countryGNPOld1.setOpacity(1);
+            countryGNPOld1.setDisable(false);
+            countryGNPOldc.setOpacity(1);
+            countryGNPOldc.setDisable(false);
+            countryLocalName1.setOpacity(1);
+            countryLocalName1.setDisable(false);
+            countryLocalNamec.setOpacity(1);
+            countryLocalNamec.setDisable(false);
+            countryGovernmentForm1.setOpacity(1);
+            countryGovernmentForm1.setDisable(false);
+            countryGovernmentFormc.setOpacity(1);
+            countryGovernmentFormc.setDisable(false);
+            countryHeadOfState1.setOpacity(1);
+            countryHeadOfState1.setDisable(false);
+            countryHeadOfStatec.setOpacity(1);
+            countryHeadOfStatec.setDisable(false);
+            countryCapital1.setOpacity(1);
+            countryCapital1.setDisable(false);
+            countryCapitalc.setOpacity(1);
+            countryCapitalc.setDisable(false);
+            countryCode21.setOpacity(1);
+            countryCode21.setDisable(false);
+            countryCode2c.setOpacity(1);
+            countryCode2c.setDisable(false);
+        }
+        else{
+            countryCode1.setOpacity(0);
+            countryCode1.setDisable(true);
+            countryCodec.setOpacity(0);
+            countryCodec.setDisable(true);
+            countryName1.setOpacity(0);
+            countryName1.setDisable(true);
+            countryNamec.setOpacity(0);
+            countryNamec.setDisable(true);
+            countryContinent1.setOpacity(0);
+            countryContinent1.setDisable(true);
+            countryContinentc.setOpacity(0);
+            countryContinentc.setDisable(true);
+            countryRegion1.setOpacity(0);
+            countryRegion1.setDisable(true);
+            countryRegionc.setOpacity(0);
+            countryRegionc.setDisable(true);
+            countrySurfaceArea1.setOpacity(0);
+            countrySurfaceArea1.setDisable(true);
+            countrySurfaceAreac.setOpacity(0);
+            countrySurfaceAreac.setDisable(true);
+            countryIndepYear1.setOpacity(0);
+            countryIndepYear1.setDisable(true);
+            countryIndepYearc.setOpacity(0);
+            countryIndepYearc.setDisable(true);
+            countryPopulation1.setOpacity(0);
+            countryPopulation1.setDisable(true);
+            countryPopulationc.setOpacity(0);
+            countryPopulationc.setDisable(true);
+            countryLifeExpectancy1.setOpacity(0);
+            countryLifeExpectancy1.setDisable(true);
+            countryLifeExpectancyc.setOpacity(0);
+            countryLifeExpectancyc.setDisable(true);
+            countryGNP1.setOpacity(0);
+            countryGNP1.setDisable(true);
+            countryGNPc.setOpacity(0);
+            countryGNPc.setDisable(true);
+            countryGNPOld1.setOpacity(0);
+            countryGNPOld1.setDisable(true);
+            countryGNPOldc.setOpacity(0);
+            countryGNPOldc.setDisable(true);
+            countryLocalName1.setOpacity(0);
+            countryLocalName1.setDisable(true);
+            countryLocalNamec.setOpacity(0);
+            countryLocalNamec.setDisable(true);
+            countryGovernmentForm1.setOpacity(0);
+            countryGovernmentForm1.setDisable(true);
+            countryGovernmentFormc.setOpacity(0);
+            countryGovernmentFormc.setDisable(true);
+            countryHeadOfState1.setOpacity(0);
+            countryHeadOfState1.setDisable(true);
+            countryHeadOfStatec.setOpacity(0);
+            countryHeadOfStatec.setDisable(true);
+            countryCapital1.setOpacity(0);
+            countryCapital1.setDisable(true);
+            countryCapitalc.setOpacity(0);
+            countryCapitalc.setDisable(true);
+            countryCode21.setOpacity(0);
+            countryCode21.setDisable(true);
+            countryCode2c.setOpacity(0);
+            countryCode2c.setDisable(true);
+        }
+
+    }
+
+    @FXML
     private void search(ActionEvent event) throws IOException {
 
         String Code;
@@ -787,12 +1021,122 @@ public class Home implements Initializable {
         String Population1;
         String District;
         String District1;
+        String Codel;
+        String Codel1;
+        String Language;
+        String Language1;
+        String IsOfficial;
+        String IsOfficial1;
+        String Percentage;
+        String Percentage1;
+        String Codec;
+        String Codec1;
+        String Namec;
+        String Namec1;
+        String Continent;
+        String Continent1;
+        String Region;
+        String Region1;
+        String Surface;
+        String Surface1;
+        String IndepYear;
+        String IndepYear1;
+        String Popu;
+        String Popu1;
+        String Life;
+        String Life1;
+        String GNP;
+        String GNP1;
+        String GNPOld;
+        String GNPOld1;
+        String Local;
+        String Local1;
+        String Government;
+        String Government1;
+        String State;
+        String State1;
+        String Capital;
+        String Capital1;
+        String Code2;
+        String Code21;
+        String union;
+        String table1;
+        String table2;
+        String table3;
+
+        TableColumn cCode = new TableColumn("CountryCode");
+        TableColumn cName = new TableColumn("CityName");
+        TableColumn cID = new TableColumn("City ID");
+        TableColumn cDistrict = new TableColumn("District");
+        TableColumn cPopulation = new TableColumn("City Population");
+        TableColumn cCodel = new TableColumn("CountryCode");
+        TableColumn cLanguage = new TableColumn("Language");
+        TableColumn cIsOffi = new TableColumn("IsOfficial");
+        TableColumn cPercentage = new TableColumn("Percentage");
+        TableColumn cCodeC = new TableColumn("Code");
+        TableColumn cNameC = new TableColumn("Name");
+        TableColumn cContinent = new TableColumn("Continent");
+        TableColumn cRegion = new TableColumn("Region");
+        TableColumn cSurface = new TableColumn("SurfaceArea");
+        TableColumn cIndepYear = new TableColumn("IndepYear");
+        TableColumn cPopulationC = new TableColumn("Population");
+        TableColumn cLife = new TableColumn("LifeExpectancy");
+        TableColumn cGNP = new TableColumn("GNP");
+        TableColumn cGNPOld = new TableColumn("GNPOld");
+        TableColumn cLocal = new TableColumn("LocalName");
+        TableColumn cGovernment = new TableColumn("GovernmentForm");
+        TableColumn cState = new TableColumn("HeadOfState");
+        TableColumn cCapital = new TableColumn("Capital");
+        TableColumn cCode2 = new TableColumn("Code2");
+
+        myRegistrosTable.getColumns().clear();
+        myRegistrosTable.refresh();
+        ObservableList<World> data = FXCollections.observableArrayList();
         int h = 0;
         int g = 0;
+        int j = 0;
 
+        if(cityCheck.isSelected())
+        {
+            table1 = "city as c";
+            j++;
+        }
+        else table1 ="";
+        if(countryCheck.isSelected()){
+            if(j > 0)
+            {
+                table2 = ",country as p";
+                j++;
+            }else{
+                table2 ="country as p";
+                j++;
+            }
+        }else{
+            table2 ="";
+        }
+        if(languageCheck.isSelected()){
+            if(j > 0)
+            {
+                table3 = ",countryLanguage as l";
+                j++;
+            }else{
+                table3 ="countryLanguage as l";
+                j++;
+            }
+        }else{
+            table3 ="";
+        }
+        if(cityCheck.isSelected() || countryCheck.isSelected() || languageCheck.isSelected())
+        {
+            union = "";
+            if(cityCheck.isSelected() && countryCheck.isSelected()) {union = "c.countrycode = p.code"; h++;}
+            else if(cityCheck.isSelected() && languageCheck.isSelected()) {union = "c.countrycode = l.CountryCode"; h++;}
+            else if(countryCheck.isSelected() && languageCheck.isSelected()) {union = "p.code = l.CountryCode"; h++;}
+        } else union="";
         if(cityCodec.isSelected())
         {
            Code1 = "c.CountryCode";
+           myRegistrosTable.getColumns().add(cCode);
            g++;
         }else
         {
@@ -803,9 +1147,11 @@ public class Home implements Initializable {
             if (g > 0)
             {
                 Name1 = ",c.name";
+                myRegistrosTable.getColumns().add(cName);
                 g++;
             }else{
                 Name1 = "c.name";
+                myRegistrosTable.getColumns().add(cName);
                 g++;
             }
             
@@ -818,9 +1164,11 @@ public class Home implements Initializable {
             if (g > 0)
             {
                 ID1 = ",c.ID";
+                myRegistrosTable.getColumns().add(cID);
                 g++;
             }else{
                 ID1 = "c.ID";
+                myRegistrosTable.getColumns().add(cID);
                 g++;
             }
 
@@ -833,9 +1181,11 @@ public class Home implements Initializable {
             if (g > 0)
             {
                 District1 = ",c.district";
+                myRegistrosTable.getColumns().add(cDistrict);
                 g++;
             }else{
                 District1 = "c.district";
+                myRegistrosTable.getColumns().add(cDistrict);
                 g++;
             }
 
@@ -848,18 +1198,347 @@ public class Home implements Initializable {
             if (g > 0)
             {
                 Population1 = ",c.population";
+                myRegistrosTable.getColumns().add(cPopulation);
                 g++;
             }else{
                 Population1 = "c.population";
+                myRegistrosTable.getColumns().add(cPopulation);
                 g++;
             }
         }else
         {
             Population1 ="";
         }
+        if(countryCodec.isSelected())
+        {
+            if(g > 0)
+            {
+                Codec1 = ",p.code";
+                myRegistrosTable.getColumns().add(cCodeC);
+                g++;
+            }else {
+                Codec1 = "p.code";
+                myRegistrosTable.getColumns().add(cCodeC);
+                g++;
+            }
+        }
+        else
+        {
+            Codec1 ="";
+        }
+        if(countryNamec.isSelected())
+        {
+            if(g > 0)
+            {
+                Namec1 = ",p.name";
+                myRegistrosTable.getColumns().add(cNameC);
+                g++;
+            }else {
+                Namec1 = "p.name";
+                myRegistrosTable.getColumns().add(cNameC);
+                g++;
+            }
+        }
+        else
+        {
+            Namec1 ="";
+        }
+        if(countryContinentc.isSelected())
+        {
+            if(g > 0)
+            {
+                Continent1 = ",p.continent";
+                myRegistrosTable.getColumns().add(cContinent);
+                g++;
+            }else {
+                Continent1 = "p.continent";
+                myRegistrosTable.getColumns().add(cContinent);
+                g++;
+            }
+        }
+        else
+        {
+            Continent1 ="";
+        }
+        if(countryRegionc.isSelected())
+        {
+            if(g > 0)
+            {
+                Region1 = ",p.region";
+                myRegistrosTable.getColumns().add(cRegion);
+                g++;
+            }else {
+                Region1 = "p.region";
+                myRegistrosTable.getColumns().add(cRegion);
+                g++;
+            }
+        }
+        else
+        {
+            Region1 ="";
+        }
+        if(countrySurfaceAreac.isSelected())
+        {
+            if(g > 0)
+            {
+                Surface1 = ",p.SurfaceArea";
+                myRegistrosTable.getColumns().add(cSurface);
+                g++;
+            }else {
+                Surface1= "p.SurfaceArea";
+                myRegistrosTable.getColumns().add(cSurface);
+                g++;
+            }
+        }
+        else
+        {
+            Surface1 ="";
+        }
+        if(countryIndepYearc.isSelected())
+        {
+            if(g > 0)
+            {
+                IndepYear1 = ",p.IndepYear";
+                myRegistrosTable.getColumns().add(cIndepYear);
+                g++;
+            }else {
+                IndepYear1 = "p.IndepYear";
+                myRegistrosTable.getColumns().add(cIndepYear);
+                g++;
+            }
+        }
+        else
+        {
+            IndepYear1 ="";
+        }
+        if(countryPopulationc.isSelected())
+        {
+            if(g > 0)
+            {
+                Popu1 = ",p.population";
+                myRegistrosTable.getColumns().add(cPopulationC);
+                g++;
+            }else {
+                Popu1 = "p.population";
+                myRegistrosTable.getColumns().add(cPopulationC);
+                g++;
+            }
+        }
+        else
+        {
+            Popu1 ="";
+        }
+        if(countryLifeExpectancyc.isSelected())
+        {
+            if(g > 0)
+            {
+                Life1 = ",p.LifeExpectancy";
+                myRegistrosTable.getColumns().add(cLife);
+                g++;
+            }else {
+                Life1 = "p.LifeExpectancy";
+                myRegistrosTable.getColumns().add(cLife);
+                g++;
+            }
+        }
+        else
+        {
+            Life1 ="";
+        }
+        if(countryGNPc.isSelected())
+        {
+            if(g > 0)
+            {
+                GNP1 = ",p.GNP";
+                myRegistrosTable.getColumns().add(cGNP);
+                g++;
+            }else {
+                GNP1 = "p.GNP";
+                myRegistrosTable.getColumns().add(cGNP);
+                g++;
+            }
+        }
+        else
+        {
+            GNP1 ="";
+        }
+        if(countryGNPOldc.isSelected())
+        {
+            if(g > 0)
+            {
+                GNPOld1 = ",p.GNPOld";
+                myRegistrosTable.getColumns().add(cGNPOld);
+                g++;
+            }else {
+                GNPOld1 = "p.GNPOld";
+                myRegistrosTable.getColumns().add(cGNPOld);
+                g++;
+            }
+        }
+        else
+        {
+            GNPOld1 ="";
+        }
+        if(countryLocalNamec.isSelected())
+        {
+            if(g > 0)
+            {
+                Local1 = ",p.LocalName";
+                myRegistrosTable.getColumns().add(cLocal);
+                g++;
+            }else {
+                Local1 = "p.LocalName";
+                myRegistrosTable.getColumns().add(cLocal);
+                g++;
+            }
+        }
+        else
+        {
+            Local1 ="";
+        }
+        if(countryGovernmentFormc.isSelected())
+        {
+            if(g > 0)
+            {
+                Government1 = ",p.government";
+                myRegistrosTable.getColumns().add(cGovernment);
+                g++;
+            }else {
+                Government1 = "p.government";
+                myRegistrosTable.getColumns().add(cGovernment);
+                g++;
+            }
+        }
+        else
+        {
+            Government1 ="";
+        }
+        if(countryHeadOfStatec.isSelected())
+        {
+            if(g > 0)
+            {
+                State1 = ",p.HeadOfState";
+                myRegistrosTable.getColumns().add(cState);
+                g++;
+            }else {
+                State1 = "p.HeadOfState";
+                myRegistrosTable.getColumns().add(cState);
+                g++;
+            }
+        }
+        else
+        {
+            State1 ="";
+        }
+        if(countryCapitalc.isSelected())
+        {
+            if(g > 0)
+            {
+                Capital1 = ",p.capital";
+                myRegistrosTable.getColumns().add(cCapital);
+                g++;
+            }else {
+                Capital1 = "p.capital";
+                myRegistrosTable.getColumns().add(cCapital);
+                g++;
+            }
+        }
+        else
+        {
+            Capital1 ="";
+        }
+        if(countryCode2c.isSelected())
+        {
+            if(g > 0)
+            {
+                Code21 = ",p.code2";
+                myRegistrosTable.getColumns().add(cCode2);
+                g++;
+            }else {
+                Code21 = "p.code2";
+                myRegistrosTable.getColumns().add(cCode2);
+                g++;
+            }
+        }
+        else
+        {
+            Code21 ="";
+        }
+        if(languageCountryCode2.isSelected())
+        {
+            if(g > 0)
+            {
+                Codel1 = ",l.CountryCode";
+                myRegistrosTable.getColumns().add(cCodel);
+                g++;
+            }else {
+                Codel1 = "l.CountryCode";
+                myRegistrosTable.getColumns().add(cCodel);
+                g++;
+            }
+        }
+        else
+        {
+            Codel1 ="";
+        }
+        if(languageLanguage2.isSelected())
+        {
+            if(g > 0)
+            {
+                Language1 = ",l.language";
+                myRegistrosTable.getColumns().add(cLanguage);
+                g++;
+            }else {
+                Language1 = "l.language";
+                myRegistrosTable.getColumns().add(cLanguage);
+                g++;
+            }
+        }
+        else
+        {
+            Language1 ="";
+        }
+        if(languageIsOfficial2.isSelected())
+        {
+            if(g > 0)
+            {
+                IsOfficial1 = ",l.IsOfficial";
+                myRegistrosTable.getColumns().add(cIsOffi);
+                g++;
+            }else {
+                IsOfficial1 = "l.IsOfficial";
+                myRegistrosTable.getColumns().add(cIsOffi);
+                g++;
+            }
+        }
+        else
+        {
+            IsOfficial1 ="";
+        }
+        if(languagePercentage2.isSelected())
+        {
+            if(g > 0)
+            {
+                Percentage1 = ",l.Percentage";
+                myRegistrosTable.getColumns().add(cPercentage);
+                g++;
+            }else {
+                Percentage1 = "l.Percentage";
+                myRegistrosTable.getColumns().add(cPercentage);
+                g++;
+            }
+        }
+        else
+        {
+            Percentage1 ="";
+        }
         if(cityCodec1.getText().equals(""))
         {
             Code = "";
+        }else if (h > 0)
+        {
+            Code = "and c.CountryCode like '"+ cityCodec1.getText()+"'";
+            h++;
         }else
         {
             Code = "c.CountryCode like '"+ cityCodec1.getText()+"'";
@@ -909,30 +1588,369 @@ public class Home implements Initializable {
             Population = "c.Population like '"+ cityPopuc1.getText()+"'";
             h++;
         }
+        if(countryCode1.getText().equals("")) {
+            Codec = "";
+        }else if (h > 0)
+        {
+            Codec = "and p.code like '"+ countryCode1.getText()+"'";
+            h++;
+
+        }else{
+            Codec = "p.code like '"+ countryCode1.getText()+"'";
+            h++;
+        }
+        if(countryName1.getText().equals("")) {
+            Namec = "";
+        }else if (h > 0)
+        {
+            Namec = "and p.name like '"+ countryName1.getText()+"'";
+            h++;
+
+        }else{
+            Namec = "p.name like '"+ countryName1.getText()+"'";
+            h++;
+        }
+        if(countryContinent1.getText().equals("")) {
+            Continent = "";
+        }else if (h > 0)
+        {
+            Continent = "and p.continent like '"+ countryContinent1.getText()+"'";
+            h++;
+
+        }else{
+            Continent = "p.continent like '"+ countryContinent1.getText()+"'";
+            h++;
+        }
+        if(countryRegion1.getText().equals("")) {
+            Region = "";
+        }else if (h > 0)
+        {
+            Region = "and p.region like '"+ countryRegion1.getText()+"'";
+            h++;
+
+        }else{
+            Region = "p.region like '"+ countryRegion1.getText()+"'";
+            h++;
+        }
+        if(countrySurfaceArea1.getText().equals("")) {
+            Surface = "";
+        }else if (h > 0)
+        {
+            Surface = "and p.SurfaceArea like '"+ countrySurfaceArea1.getText()+"'";
+            h++;
+
+        }else{
+            Surface = "p.SurfaceArea like '"+ countrySurfaceArea1.getText()+"'";
+            h++;
+        }
+        if(countryIndepYear1.getText().equals("")) {
+            IndepYear = "";
+        }else if (h > 0)
+        {
+            IndepYear = "and p.IndepYear like '"+ countryIndepYear1.getText()+"'";
+            h++;
+
+        }else{
+            IndepYear = "p.IndepYear like '"+ countryIndepYear1.getText()+"'";
+            h++;
+        }
+        if(countryPopulation1.getText().equals("")) {
+            Popu = "";
+        }else if (h > 0)
+        {
+            Popu = "and p.population like '"+ countryPopulation1.getText()+"'";
+            h++;
+
+        }else{
+            Popu = "p.population like '"+ countryPopulation1.getText()+"'";
+            h++;
+        }
+        if(countryLifeExpectancy1.getText().equals("")) {
+            Life = "";
+        }else if (h > 0)
+        {
+            Life = "and p.LifeExpectancy like '"+ countryLifeExpectancy1.getText()+"'";
+            h++;
+
+        }else{
+            Life = "p.LifeExpectancy like '"+ countryLifeExpectancy1.getText()+"'";
+            h++;
+        }
+        if(countryGNP1.getText().equals("")) {
+            GNP = "";
+        }else if (h > 0)
+        {
+            GNP = "and p.GNP like '"+ countryGNP1.getText()+"'";
+            h++;
+
+        }else{
+            GNP = "p.GNP like '"+ countryGNP1.getText()+"'";
+            h++;
+        }
+        if(countryGNPOld1.getText().equals("")) {
+            GNPOld = "";
+        }else if (h > 0)
+        {
+            GNPOld = "and p.GNPOld like '"+ countryGNPOld1.getText()+"'";
+            h++;
+
+        }else{
+            GNPOld = "p.GNPOld like '"+ countryGNPOld1.getText()+"'";
+            h++;
+        }
+        if(countryLocalName1.getText().equals("")) {
+            Local = "";
+        }else if (h > 0)
+        {
+            Local = "and p.LocalName like '"+ countryLocalName1.getText()+"'";
+            h++;
+
+        }else{
+            Local = "p.LocalName like '"+ countryLocalName1.getText()+"'";
+            h++;
+        }
+        if(countryGovernmentForm1.getText().equals("")) {
+            Government = "";
+        }else if (h > 0)
+        {
+            Government = "and p.government like '"+ countryGovernmentForm1.getText()+"'";
+            h++;
+
+        }else{
+            Government = "p.government like '"+ countryGovernmentForm1.getText()+"'";
+            h++;
+        }
+        if(countryHeadOfState1.getText().equals("")) {
+            State = "";
+        }else if (h > 0)
+        {
+            State = "and p.HeadOfState like '"+ countryHeadOfState1.getText()+"'";
+            h++;
+
+        }else{
+            State = "p.HeadOfState like '"+ countryHeadOfState1.getText()+"'";
+            h++;
+        }
+        if(countryCapital1.getText().equals("")) {
+            Capital = "";
+        }else if (h > 0)
+        {
+            Capital = "and p.capital like '"+ countryCapital1.getText()+"'";
+            h++;
+
+        }else{
+            Capital = "p.capital like '"+ countryCapital1.getText()+"'";
+            h++;
+        }
+        if(countryCode21.getText().equals("")) {
+            Code2 = "";
+        }else if (h > 0)
+        {
+            Code2 = "and p.code2 like '"+ countryCode21.getText()+"'";
+            h++;
+
+        }else{
+            Code2 = "p.code2 like '"+ countryCode21.getText()+"'";
+            h++;
+        }
+        if(languageCountryCode1.getText().equals("")) {
+            Codel = "";
+        }else if (h > 0)
+        {
+            Codel = "and l.CountryCode like '"+ languageCountryCode1.getText()+"'";
+            h++;
+
+        }else{
+            Codel = "l.CountryCode like '"+ languageCountryCode1.getText()+"'";
+            h++;
+        }
+        if(languageLanguage1.getText().equals("")) {
+            Language = "";
+        }else if (h > 0)
+        {
+            Language = "and l.language like '"+ languageLanguage1.getText()+"'";
+            h++;
+
+        }else{
+            Language = "l.language like '"+ languageLanguage1.getText()+"'";
+            h++;
+        }
+        if(languageIsOfficial1.getText().equals("")) {
+            IsOfficial = "";
+        }else if (h > 0)
+        {
+            IsOfficial = "and l.IsOfficial like '"+ languageIsOfficial1.getText()+"'";
+            h++;
+
+        }else{
+            IsOfficial = "l.IsOfficial like '"+ languageIsOfficial1.getText()+"'";
+            h++;
+        }
+        if(languagePercentage1.getText().equals("")) {
+            Percentage = "";
+        }else if (h > 0)
+        {
+            Percentage = "and l.percentage like '"+ languagePercentage1.getText()+"'";
+            h++;
+
+        }else{
+            Percentage = "l.percentage like '"+ languagePercentage1.getText()+"'";
+            h++;
+        }
         try {
+            System.out.println("SELECT "+Code1+Name1+ID1+District1+Population1+Codec1+Namec1+Continent1+Region1+Surface1+IndepYear1+Population+Life1+GNP1+GNPOld1+Local1+Government1+State1+Capital1+Code21+Codel1+Language1+IsOfficial1+Percentage1+" FROM "+table1+table2+table3+" WHERE "+union+" "+Code+" "+Name+" "+ID+" "+District+" "+Population+" "+Codec+" "+Namec+" "+Continent+" "+Region+" "+Surface+" "+IndepYear+" "+Popu+" "+Life+" "+GNP+" "+GNPOld+" "+Local+" "+Government+" "+State+" "+Capital+" "+Code2+" "+Codel+" "+Language+" "+IsOfficial+" "+Percentage);
             Connection con = DriverManager.getConnection(
                     "jdbc:mysql://localhost:3306/world", Login.user, Login.password);
             Statement stmt = con.createStatement();
             if(h > 0){
-                ResultSet rs = stmt.executeQuery("SELECT "+Code1+Name1+ID1+District1+Population1+" FROM city as c WHERE "+Code+" "+Name+" "+ID+" "+District+" "+Population);
-                h=0;
+                ResultSet rs = stmt.executeQuery("SELECT "+Code1+Name1+ID1+District1+Population1+Codec1+Namec1+Continent1+Region1+Surface1+IndepYear1+Population+Life1+GNP1+GNPOld1+Local1+Government1+State1+Capital1+Code21+Codel1+Language1+IsOfficial1+Percentage1+" FROM "+table1+table2+table3+" WHERE "+union+" "+Code+" "+Name+" "+ID+" "+District+" "+Population+" "+Codec+" "+Namec+" "+Continent+" "+Region+" "+Surface+" "+IndepYear+" "+Popu+" "+Life+" "+GNP+" "+GNPOld+" "+Local+" "+Government+" "+State+" "+Capital+" "+Code2+" "+Codel+" "+Language+" "+IsOfficial+" "+Percentage);
                 while (rs.next()) {
                     String  code;
                     String name;
                     String district;
                     String id;
                     String population;
-                    if(cityCodec.isSelected()) code = rs.getString("CountryCode");
+                    String codeC;
+                    String nameC;
+                    String continent;
+                    String region;
+                    String surface;
+                    String indepYear;
+                    String popu;
+                    String life;
+                    String gnp;
+                    String gnpold;
+                    String local;
+                    String government;
+                    String state;
+                    String capital;
+                    String code2;
+                    String codeL;
+                    String language;
+                    String isOfficial;
+                    String percentage;
+
+                    if(cityCodec.isSelected()){
+                        code = rs.getString("CountryCode");
+                        cCode.setCellValueFactory(new PropertyValueFactory<>("CountryCode"));
+                    }
                     else code = "";
-                    if(cityNamec.isSelected()) name = rs.getString("Name");
+                    if(cityNamec.isSelected()){
+                        name = rs.getString("Name");
+                        cName.setCellValueFactory(new PropertyValueFactory<>("CityName"));
+                    }
                     else name = "";
-                    if(cityDistc.isSelected()) district = rs.getString("District");
+                    if(cityDistc.isSelected()){
+                        district = rs.getString("District");
+                        cDistrict.setCellValueFactory(new PropertyValueFactory<>("District"));
+                    }
                     else district = "";
-                    if(cityIDc.isSelected()) id = rs.getString("ID");
+                    if(cityIDc.isSelected()) {
+                        id = rs.getString("ID");
+                        cID.setCellValueFactory(new PropertyValueFactory<>("Id"));
+                    }
                     else id = "";
-                    if(cityPopuc.isSelected()) population = rs.getString("Population");
+                    if(cityPopuc.isSelected()){
+                        population = rs.getString("Population");
+                        cPopulation.setCellValueFactory(new PropertyValueFactory<>("CityPopulation"));
+                    }
                     else population = "";
-                    System.out.println(id+" "+name+" "+code+" "+district+" "+population);
+                    if(countryCodec.isSelected()){
+                        codeC = rs.getString("Code");
+                        cCodeC.setCellValueFactory(new PropertyValueFactory<>("Code"));
+                    }
+                    else codeC = "";
+                    if(countryNamec.isSelected()){
+                        nameC = rs.getString("Name");
+                        cNameC.setCellValueFactory(new PropertyValueFactory<>("Name"));
+                    }
+                    else nameC = "";
+                    if(countryContinentc.isSelected()){
+                        continent = rs.getString("Continent");
+                        cContinent.setCellValueFactory(new PropertyValueFactory<>("Continent"));
+                    }
+                    else continent = "";
+                    if(countryRegionc.isSelected()){
+                        region = rs.getString("Region");
+                        cRegion.setCellValueFactory(new PropertyValueFactory<>("Region"));
+                    }
+                    else region = "";
+                    if(countrySurfaceAreac.isSelected()){
+                        surface = rs.getString("SurfaceArea");
+                        cSurface.setCellValueFactory(new PropertyValueFactory<>("SurfaceArea"));
+                    }
+                    else surface = "";
+                    if(countryIndepYearc.isSelected()){
+                        indepYear = rs.getString("IndepYear");
+                        cIndepYear.setCellValueFactory(new PropertyValueFactory<>("IndepYear"));
+                    }
+                    else indepYear = "";
+                    if(countryPopulationc.isSelected()){
+                        popu = rs.getString("Population");
+                        cPopulationC.setCellValueFactory(new PropertyValueFactory<>("Population"));
+                    }
+                    else popu = "";
+                    if(countryLifeExpectancyc.isSelected()){
+                        life = rs.getString("LifeExpectancy");
+                        cLife.setCellValueFactory(new PropertyValueFactory<>("LifeExpectancy"));
+                    }
+                    else life = "";
+                    if(countryGNPc.isSelected()){
+                        gnp = rs.getString("GNP");
+                        cGNP.setCellValueFactory(new PropertyValueFactory<>("GNP"));
+                    }
+                    else gnp = "";
+                    if(countryGNPOldc.isSelected()){
+                        gnpold = rs.getString("GNPOld");
+                        cGNPOld.setCellValueFactory(new PropertyValueFactory<>("GNPOld"));
+                    }
+                    else gnpold = "";
+                    if(countryLocalNamec.isSelected()){
+                        local = rs.getString("LocalName");
+                        cLocal.setCellValueFactory(new PropertyValueFactory<>("LocalName"));
+                    }
+                    else local = "";
+                    if(countryGovernmentFormc.isSelected()){
+                        government = rs.getString("GovernmentForm");
+                        cGovernment.setCellValueFactory(new PropertyValueFactory<>("GovernmentForm"));
+                    }
+                    else government = "";
+                    if(countryHeadOfStatec.isSelected()){
+                        state = rs.getString("HeadOfState");
+                        cState.setCellValueFactory(new PropertyValueFactory<>("HeadOfState"));
+                    }
+                    else state = "";
+                    if(countryCapitalc.isSelected()){
+                        capital = rs.getString("Capital");
+                        cCapital.setCellValueFactory(new PropertyValueFactory<>("Capital"));
+                    }
+                    else capital = "";
+                    if(countryCode2c.isSelected()){
+                        code2 = rs.getString("Code2");
+                        cCode2.setCellValueFactory(new PropertyValueFactory<>("Code2"));
+                    }
+                    else code2 = "";
+                    if(languageCountryCode2.isSelected()){
+                        codeL = rs.getString("CountryCode");
+                        cCodel.setCellValueFactory(new PropertyValueFactory<>("CountryCodeL"));
+                    }
+                    else codeL = "";
+                    if(languageLanguage2.isSelected()){
+                        language = rs.getString("Language");
+                        cLanguage.setCellValueFactory(new PropertyValueFactory<>("Language"));
+                    }
+                    else language = "";
+                    if(languageIsOfficial2.isSelected()){
+                        isOfficial = rs.getString("IsOfficial");
+                        cIsOffi.setCellValueFactory(new PropertyValueFactory<>("IsOfficial"));
+                    }
+                    else isOfficial = "";
+                    if(languagePercentage2.isSelected()){
+                        percentage = rs.getString("Percentage");
+                        cPercentage.setCellValueFactory(new PropertyValueFactory<>("Percentage"));
+                    }
+                    else percentage = "";
+                    data.add(new World(id,name,code,district,population,codeC,nameC,continent,region,surface,indepYear,popu,life,gnp,gnpold,local,government,state,capital,code2,codeL,language,isOfficial,percentage));
                 }
             }
             con.close();
@@ -943,12 +1961,55 @@ public class Home implements Initializable {
         catch (Exception e){
             System.out.println(e);
         }
+        cityCodec.setSelected(false);
+        cityCodec1.setText("");
+        cityNamec.setSelected(false);
+        cityNamec1.setText("");
+        cityIDc.setSelected(false);
+        cityIDc1.setText("");
+        cityDistc.setSelected(false);
+        cityDistc1.setText("");
+        cityPopuc.setSelected(false);
+        cityPopuc1.setText("");
+        countryCodec.setSelected(false);
+        countryCode1.setText("");
+        countryNamec.setSelected(false);
+        countryName1.setText("");
+        countryContinentc.setSelected(false);
+        countryContinent1.setText("");
+        countryRegionc.setSelected(false);
+        countryRegion1.setText("");
+        countrySurfaceAreac.setSelected(false);
+        countrySurfaceArea1.setText("");
+        countryIndepYearc.setSelected(false);
+        countryIndepYear1.setText("");
+        countryPopulationc.setSelected(false);
+        countryPopulation1.setText("");
+        countryLifeExpectancyc.setSelected(false);
+        countryLifeExpectancy1.setText("");
+        countryGNPc.setSelected(false);
+        countryGNP1.setText("");
+        countryGNPOldc.setSelected(false);
+        countryGNPOld1.setText("");
+        countryLocalNamec.setSelected(false);
+        countryLocalName1.setText("");
+        countryGovernmentFormc.setSelected(false);
+        countryGovernmentForm1.setText("");
+        countryHeadOfStatec.setSelected(false);
+        countryHeadOfState1.setText("");
+        countryCapitalc.setSelected(false);
+        countryCapital1.setText("");
+        countryCode2c.setSelected(false);
+        countryCode21.setText("");
+        languageCountryCode2.setSelected(false);
+        languageCountryCode1.setText("");
+        languageLanguage2.setSelected(false);
+        languageLanguage1.setText("");
+        languageIsOfficial2.setSelected(false);
+        languageIsOfficial1.setText("");
+        languagePercentage2.setSelected(false);
+        languagePercentage1.setText("");
+        myRegistrosTable.setItems(data);
     }
-
-
-
-
-
-
 }
 
