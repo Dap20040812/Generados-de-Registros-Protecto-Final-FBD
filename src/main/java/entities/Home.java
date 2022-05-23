@@ -401,9 +401,6 @@ public class Home implements Initializable {
         countryCode2c.setOpacity(0);
         countryCode2c.setDisable(true);
 
-
-
-
         myLanguageCode.setCellValueFactory(new PropertyValueFactory<>("CountryCode"));
         myLanguageLanguage.setCellValueFactory(new PropertyValueFactory<>("Language"));
         myLanguageOfficial.setCellValueFactory(new PropertyValueFactory<>("IsOfficial"));
@@ -426,10 +423,6 @@ public class Home implements Initializable {
         languagePercentage2.setDisable(true);
         languagePercentage1.setOpacity(0);
         languagePercentage1.setDisable(true);
-
-
-
-
     }
 
     /**
@@ -1218,6 +1211,7 @@ public class Home implements Initializable {
             if(cityCheck.isSelected() && countryCheck.isSelected()) {union = "c.countrycode = p.code"; h++;}
             else if(cityCheck.isSelected() && languageCheck.isSelected()) {union = "c.countrycode = l.CountryCode"; h++;}
             else if(countryCheck.isSelected() && languageCheck.isSelected()) {union = "p.code = l.CountryCode"; h++;}
+            else if(countryCheck.isSelected() && languageCheck.isSelected() && cityCheck.isSelected()){union = "p.code = l.CountryCode and p.code = c.countrycode"; h++;}
         } else union="";
         if(cityCodec.isSelected())
         {
@@ -2130,6 +2124,5 @@ public class Home implements Initializable {
         workbook.write(fileOut);
         fileOut.close();
     }
-
 }
 
